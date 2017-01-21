@@ -119,6 +119,25 @@
             </objects>
             <point key="canvasLocation" x="752.9296875" y="40.625"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="K2v-2S-8rb">
+            <objects>
+                <viewController id="1ze-co-xLx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VtH-Ml-h3s"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q3x-GL-Eow"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sbT-zb-yKn">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="ipW-cM-Xnu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EmU-2Q-VYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="706" y="828"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Button1" width="638" height="94"/>
