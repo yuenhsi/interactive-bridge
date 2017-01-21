@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Interactive_Bridge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="Interactive_Bridge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,6 +28,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoG-OV-sxE">
                                 <rect key="frame" x="299" y="337" width="426" height="94"/>
                                 <size key="titleShadowOffset" width="2" height="2"/>
+                                <connections>
+                                    <segue destination="qYz-fB-bRR" kind="show" action="showDetailViewController:sender:" id="oET-kV-WQZ"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startBtn" translatesAutoresizingMaskIntoConstraints="NO" id="sE1-92-iBU">
                                 <rect key="frame" x="299" y="337" width="426" height="94"/>
@@ -53,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="32.8125" y="38.28125"/>
         </scene>
-        <!--View Controller-->
+        <!--SelectionVC-->
         <scene sceneID="C5F-Em-v9c">
             <objects>
-                <viewController id="qYz-fB-bRR" sceneMemberID="viewController">
+                <viewController id="qYz-fB-bRR" customClass="SelectionVC" customModule="Interactive_Bridge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f5Q-Ku-MXb"/>
                         <viewControllerLayoutGuide type="bottom" id="6KE-gq-kX6"/>
@@ -78,10 +82,10 @@
                                 <rect key="frame" x="193" y="245" width="638" height="94"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fR7-eV-geJ">
-                                <rect key="frame" x="193" y="389" width="638" height="94"/>
+                                <rect key="frame" x="192.5" y="389" width="638" height="94"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button2" translatesAutoresizingMaskIntoConstraints="NO" id="9xj-5X-z4Y">
-                                <rect key="frame" x="193.5" y="389" width="638" height="94"/>
+                                <rect key="frame" x="193" y="389" width="638" height="94"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhZ-QE-02U">
                                 <rect key="frame" x="193.5" y="533" width="638" height="94"/>
@@ -130,19 +134,100 @@
                     <view key="view" contentMode="scaleToFill" id="sbT-zb-yKn">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="RwJ-Mq-yt0">
+                                <rect key="frame" x="28" y="190" width="968" height="510"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main menu" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-Sb-6kA">
+                                <rect key="frame" x="28" y="715" width="125" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="fx0-r3-Vty"/>
+                                    <constraint firstAttribute="width" constant="125" id="vfz-L5-EcJ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Skip ahead" translatesAutoresizingMaskIntoConstraints="NO" id="5cl-hU-8vD">
+                                <rect key="frame" x="873" y="715" width="125" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="apw-Wj-ENM"/>
+                                    <constraint firstAttribute="width" constant="125" id="nSB-vk-sgf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="East Hand" translatesAutoresizingMaskIntoConstraints="NO" id="WGq-0j-zE5">
+                                <rect key="frame" x="812" y="330" width="157" height="231"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="231" id="E1n-wt-MtZ"/>
+                                    <constraint firstAttribute="width" constant="157" id="eMh-0M-zyR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="West Hand" translatesAutoresizingMaskIntoConstraints="NO" id="baN-ik-sgG">
+                                <rect key="frame" x="55" y="330" width="159" height="231"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="231" id="8pO-Af-SX0"/>
+                                    <constraint firstAttribute="width" constant="159" id="dVD-KC-m6m"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ally Hand" translatesAutoresizingMaskIntoConstraints="NO" id="jey-Ys-YvW">
+                                <rect key="frame" x="251.5" y="220" width="521" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5up-r4-tJ0"/>
+                                    <constraint firstAttribute="width" constant="521" id="HMf-4q-11C"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The person who starts the trick gets to decide the suit. Everyone must “follow suit” if possible." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uP4-a0-a6h">
+                                <rect key="frame" x="52" y="104" width="920" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="920" id="1u7-aI-4cf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBoldItalic" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" red="0.43137254901960786" green="0.27450980392156865" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title graphic" translatesAutoresizingMaskIntoConstraints="NO" id="J1F-oK-Psg">
+                                <rect key="frame" x="20" y="28" width="984" height="87"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Q3x-GL-Eow" firstAttribute="top" secondItem="JHR-Sb-6kA" secondAttribute="bottom" constant="20" id="6F9-Sy-1J7"/>
+                            <constraint firstItem="J1F-oK-Psg" firstAttribute="trailing" secondItem="sbT-zb-yKn" secondAttribute="trailingMargin" id="8PI-b3-zf4"/>
+                            <constraint firstItem="WGq-0j-zE5" firstAttribute="centerY" secondItem="RwJ-Mq-yt0" secondAttribute="centerY" id="8qN-SL-vmM"/>
+                            <constraint firstItem="RwJ-Mq-yt0" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" constant="8" id="Me1-Fm-ASB"/>
+                            <constraint firstItem="JHR-Sb-6kA" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" constant="8" id="SRK-Ud-qqh"/>
+                            <constraint firstItem="Q3x-GL-Eow" firstAttribute="top" secondItem="5cl-hU-8vD" secondAttribute="bottom" constant="20" id="Tsi-v3-BIb"/>
+                            <constraint firstItem="J1F-oK-Psg" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" id="YBN-Gs-ghk"/>
+                            <constraint firstItem="RwJ-Mq-yt0" firstAttribute="top" secondItem="uP4-a0-a6h" secondAttribute="bottom" constant="20" id="ZJ6-7q-bzy"/>
+                            <constraint firstItem="RwJ-Mq-yt0" firstAttribute="top" secondItem="J1F-oK-Psg" secondAttribute="bottom" constant="75" id="ZY6-TV-fEA"/>
+                            <constraint firstItem="jey-Ys-YvW" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" constant="200" id="avA-aw-oJu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WGq-0j-zE5" secondAttribute="trailing" constant="35" id="c8S-Lp-pc9"/>
+                            <constraint firstItem="J1F-oK-Psg" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" constant="8" id="fpK-xH-u5N"/>
+                            <constraint firstItem="uP4-a0-a6h" firstAttribute="centerX" secondItem="sbT-zb-yKn" secondAttribute="centerX" id="liO-ik-ZhW"/>
+                            <constraint firstItem="5cl-hU-8vD" firstAttribute="top" secondItem="RwJ-Mq-yt0" secondAttribute="bottom" constant="15" id="lq2-Ec-fQf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5cl-hU-8vD" secondAttribute="trailing" constant="6" id="mRr-sC-fSK"/>
+                            <constraint firstItem="jey-Ys-YvW" firstAttribute="centerX" secondItem="sbT-zb-yKn" secondAttribute="centerX" id="miI-kw-Gkk"/>
+                            <constraint firstItem="RwJ-Mq-yt0" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" constant="170" id="n2C-VK-HlP"/>
+                            <constraint firstItem="baN-ik-sgG" firstAttribute="centerY" secondItem="RwJ-Mq-yt0" secondAttribute="centerY" id="sKc-Ml-qrd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RwJ-Mq-yt0" secondAttribute="trailing" constant="8" id="uOq-jk-qne"/>
+                            <constraint firstItem="baN-ik-sgG" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" constant="35" id="ugo-ex-Zbm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ipW-cM-Xnu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmU-2Q-VYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="828"/>
+            <point key="canvasLocation" x="705.46875" y="827.34375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Ally Hand" width="521" height="50"/>
+        <image name="Board" width="952" height="515"/>
         <image name="Button1" width="638" height="94"/>
         <image name="Button2" width="638" height="94"/>
         <image name="Button3" width="638" height="94"/>
+        <image name="East Hand" width="158" height="231"/>
+        <image name="Main menu" width="125" height="21"/>
+        <image name="Skip ahead" width="125" height="27"/>
+        <image name="Title graphic" width="1004" height="109"/>
+        <image name="West Hand" width="160" height="231"/>
         <image name="background" width="1738" height="1306"/>
         <image name="portalLogo" width="536" height="112"/>
         <image name="startBtn" width="426" height="94"/>
