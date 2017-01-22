@@ -77,18 +77,27 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mif-1V-zlz">
                                 <rect key="frame" x="193" y="245" width="638" height="94"/>
+                                <connections>
+                                    <action selector="btnOnePressed:" destination="qYz-fB-bRR" eventType="touchUpInside" id="crf-AJ-FyM"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button1" translatesAutoresizingMaskIntoConstraints="NO" id="UND-jy-8QH">
                                 <rect key="frame" x="193" y="245" width="638" height="94"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fR7-eV-geJ">
                                 <rect key="frame" x="192.5" y="389" width="638" height="94"/>
+                                <connections>
+                                    <action selector="btnTwoPressed:" destination="qYz-fB-bRR" eventType="touchUpInside" id="eLk-vO-gXf"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button2" translatesAutoresizingMaskIntoConstraints="NO" id="9xj-5X-z4Y">
                                 <rect key="frame" x="193" y="389" width="638" height="94"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhZ-QE-02U">
                                 <rect key="frame" x="193.5" y="533" width="638" height="94"/>
+                                <connections>
+                                    <action selector="btnThreePressed:" destination="qYz-fB-bRR" eventType="touchUpInside" id="4en-P9-GOr"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button3" translatesAutoresizingMaskIntoConstraints="NO" id="M1P-kW-MAJ">
                                 <rect key="frame" x="193" y="533" width="638" height="94"/>
@@ -118,15 +127,18 @@
                             <constraint firstItem="Mif-1V-zlz" firstAttribute="height" secondItem="UND-jy-8QH" secondAttribute="height" id="uA6-lH-eCI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="1ze-co-xLx" kind="show" identifier="TutorialVC" id="C8t-gN-fVJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pW3-Ne-FWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="752.9296875" y="40.625"/>
         </scene>
-        <!--Title-->
+        <!--TutorialVC-->
         <scene sceneID="K2v-2S-8rb">
             <objects>
-                <viewController id="1ze-co-xLx" sceneMemberID="viewController">
+                <viewController id="1ze-co-xLx" customClass="TutorialVC" customModule="Interactive_Bridge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VtH-Ml-h3s"/>
                         <viewControllerLayoutGuide type="bottom" id="Q3x-GL-Eow"/>
@@ -327,7 +339,6 @@
                             <constraint firstItem="Y4O-od-g96" firstAttribute="centerX" secondItem="lf5-wN-X8r" secondAttribute="centerX" id="xiN-XW-ZpI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="ipW-cM-Xnu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmU-2Q-VYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

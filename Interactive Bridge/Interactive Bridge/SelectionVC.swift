@@ -21,15 +21,27 @@ class SelectionVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func btnOnePressed(_ sender: Any) {
+        performSegue(withIdentifier: "TutorialVC", sender: Tutorial.playing)
     }
-    */
-
+    
+    @IBAction func btnTwoPressed(_ sender: Any) {
+        performSegue(withIdentifier: "TutorialVC", sender: Tutorial.bidding)
+    }
+    
+    @IBAction func btnThreePressed(_ sender: Any) {
+        performSegue(withIdentifier: "TutorialVC", sender: Tutorial.scoring)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TutorialVC" {
+            if let segueVC = segue.destination as? TutorialVC {
+                if let tutorialType = sender as? Tutorial {
+                    segueVC.type = tutorialType
+                }
+            }
+        }
+    }
+    
 }
