@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A5AA6301E354C72001BF382 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA62F1E354C72001BF382 /* BorderedLabel.swift */; };
-		5A5AA6321E354FA0001BF382 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA6311E354FA0001BF382 /* TutorialVC.swift */; };
+		5A5AA6321E354FA0001BF382 /* PlayingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA6311E354FA0001BF382 /* PlayingVC.swift */; };
 		5A5AA6341E3550A7001BF382 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA6331E3550A7001BF382 /* Constants.swift */; };
 		5AB04C551E32941D0046C996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB04C541E32941D0046C996 /* AppDelegate.swift */; };
 		5AB04C571E32941D0046C996 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB04C561E32941D0046C996 /* WelcomeVC.swift */; };
@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		5A5AA62F1E354C72001BF382 /* BorderedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
-		5A5AA6311E354FA0001BF382 /* TutorialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		5A5AA6311E354FA0001BF382 /* PlayingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingVC.swift; sourceTree = "<group>"; };
 		5A5AA6331E3550A7001BF382 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5AB04C511E32941D0046C996 /* Interactive Bridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interactive Bridge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB04C541E32941D0046C996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			children = (
 				5AB04C561E32941D0046C996 /* WelcomeVC.swift */,
 				5AB04C701E33361A0046C996 /* SelectionVC.swift */,
-				5A5AA6311E354FA0001BF382 /* TutorialVC.swift */,
+				5A5AA6311E354FA0001BF382 /* PlayingVC.swift */,
 				5AB04C541E32941D0046C996 /* AppDelegate.swift */,
 			);
 			name = Controller;
@@ -184,7 +184,7 @@
 				5AB04C571E32941D0046C996 /* WelcomeVC.swift in Sources */,
 				5A5AA6301E354C72001BF382 /* BorderedLabel.swift in Sources */,
 				5AB04C711E33361A0046C996 /* SelectionVC.swift in Sources */,
-				5A5AA6321E354FA0001BF382 /* TutorialVC.swift in Sources */,
+				5A5AA6321E354FA0001BF382 /* PlayingVC.swift in Sources */,
 				5AB04C551E32941D0046C996 /* AppDelegate.swift in Sources */,
 				5A5AA6341E3550A7001BF382 /* Constants.swift in Sources */,
 			);

@@ -128,17 +128,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="1ze-co-xLx" kind="show" identifier="TutorialVC" id="C8t-gN-fVJ"/>
+                        <segue destination="1ze-co-xLx" kind="show" identifier="PlayingVC" id="C8t-gN-fVJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pW3-Ne-FWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="752.9296875" y="40.625"/>
         </scene>
-        <!--TutorialVC-->
+        <!--PlayingVC-->
         <scene sceneID="K2v-2S-8rb">
             <objects>
-                <viewController id="1ze-co-xLx" customClass="TutorialVC" customModule="Interactive_Bridge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1ze-co-xLx" customClass="PlayingVC" customModule="Interactive_Bridge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VtH-Ml-h3s"/>
                         <viewControllerLayoutGuide type="bottom" id="Q3x-GL-Eow"/>

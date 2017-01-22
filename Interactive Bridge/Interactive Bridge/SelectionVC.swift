@@ -23,25 +23,15 @@ class SelectionVC: UIViewController {
     
     
     @IBAction func btnOnePressed(_ sender: Any) {
-        performSegue(withIdentifier: "TutorialVC", sender: Tutorial.playing)
+        performSegue(withIdentifier: "PlayingVC", sender: nil)
     }
     
     @IBAction func btnTwoPressed(_ sender: Any) {
-        performSegue(withIdentifier: "TutorialVC", sender: Tutorial.bidding)
+        performSegue(withIdentifier: "PlayingVC", sender: nil)
     }
     
     @IBAction func btnThreePressed(_ sender: Any) {
-        performSegue(withIdentifier: "TutorialVC", sender: Tutorial.scoring)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TutorialVC" {
-            if let segueVC = segue.destination as? TutorialVC {
-                if let tutorialType = sender as? Tutorial {
-                    segueVC.type = tutorialType
-                }
-            }
-        }
+        performSegue(withIdentifier: "PlayingVC", sender: nil)
     }
     
 }
