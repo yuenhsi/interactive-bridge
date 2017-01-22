@@ -339,6 +339,11 @@
                             <constraint firstItem="Y4O-od-g96" firstAttribute="centerX" secondItem="lf5-wN-X8r" secondAttribute="centerX" id="xiN-XW-ZpI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="selectedSuitImg" destination="rMe-C6-Rhg" id="hDF-Bk-dfc"/>
+                        <outlet property="titleLbl" destination="zRh-oi-8lC" id="HZ5-Ro-7KD"/>
+                        <outlet property="trumpSuitLbl" destination="hwn-8J-Dfm" id="zzE-uS-sH9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmU-2Q-VYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
