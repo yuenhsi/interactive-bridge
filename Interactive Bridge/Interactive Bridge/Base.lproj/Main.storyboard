@@ -275,6 +275,16 @@
                                 <color key="textColor" red="0.45490196078431372" green="0.26666666666666666" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playing: Rule 1 / 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRh-oi-8lC">
+                                <rect key="frame" x="162" y="24" width="700" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="700" id="8W6-eh-QGN"/>
+                                    <constraint firstAttribute="height" constant="75" id="wuR-Tw-awk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
+                                <color key="textColor" red="0.43137254901960786" green="0.27450980392156865" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -306,6 +316,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5cl-hU-8vD" secondAttribute="trailing" constant="6" id="mRr-sC-fSK"/>
                             <constraint firstItem="jey-Ys-YvW" firstAttribute="centerX" secondItem="sbT-zb-yKn" secondAttribute="centerX" id="miI-kw-Gkk"/>
                             <constraint firstItem="RwJ-Mq-yt0" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" constant="170" id="n2C-VK-HlP"/>
+                            <constraint firstItem="uP4-a0-a6h" firstAttribute="top" secondItem="zRh-oi-8lC" secondAttribute="bottom" constant="5" id="pKt-bI-Uds"/>
+                            <constraint firstItem="zRh-oi-8lC" firstAttribute="centerX" secondItem="J1F-oK-Psg" secondAttribute="centerX" id="qSy-Wl-0zQ"/>
                             <constraint firstItem="baN-ik-sgG" firstAttribute="centerY" secondItem="RwJ-Mq-yt0" secondAttribute="centerY" id="sKc-Ml-qrd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RwJ-Mq-yt0" secondAttribute="trailing" constant="8" id="uOq-jk-qne"/>
                             <constraint firstItem="baN-ik-sgG" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" constant="35" id="ugo-ex-Zbm"/>
