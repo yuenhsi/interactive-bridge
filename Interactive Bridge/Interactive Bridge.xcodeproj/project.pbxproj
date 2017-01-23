@@ -86,6 +86,7 @@
 		5AB04C6D1E3335A10046C996 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5A5AA62F1E354C72001BF382 /* BorderedLabel.swift */,
 				5AB04C581E32941D0046C996 /* Main.storyboard */,
 				5AB04C5D1E32941D0046C996 /* LaunchScreen.storyboard */,
 			);
@@ -95,7 +96,6 @@
 		5AB04C6E1E3335A60046C996 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5A5AA62F1E354C72001BF382 /* BorderedLabel.swift */,
 				5A5AA6351E358E40001BF382 /* Card.swift */,
 				5A5AA6331E3550A7001BF382 /* Constants.swift */,
 			);

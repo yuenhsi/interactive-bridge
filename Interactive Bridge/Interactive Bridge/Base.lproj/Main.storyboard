@@ -295,7 +295,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hearts" translatesAutoresizingMaskIntoConstraints="NO" id="koa-sL-Npe">
-                                        <rect key="frame" x="125.5" y="3" width="28" height="28"/>
+                                        <rect key="frame" x="130.5" y="3" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="koa-sL-Npe" secondAttribute="height" multiplier="1:1" id="Vcx-vO-w8W"/>
                                         </constraints>
@@ -303,7 +303,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="koa-sL-Npe" firstAttribute="leading" secondItem="tLX-3i-8vH" secondAttribute="trailing" id="Mek-gw-bLn"/>
+                                    <constraint firstItem="koa-sL-Npe" firstAttribute="leading" secondItem="tLX-3i-8vH" secondAttribute="trailing" constant="5" id="Mek-gw-bLn"/>
                                     <constraint firstItem="koa-sL-Npe" firstAttribute="height" secondItem="IC4-uL-Gxd" secondAttribute="height" constant="-5" id="oGO-Hh-aVH"/>
                                     <constraint firstItem="tLX-3i-8vH" firstAttribute="centerY" secondItem="IC4-uL-Gxd" secondAttribute="centerY" id="oyP-wP-RTt"/>
                                     <constraint firstItem="koa-sL-Npe" firstAttribute="centerY" secondItem="IC4-uL-Gxd" secondAttribute="centerY" id="rQ7-fD-vGY"/>
@@ -365,8 +365,9 @@
                     </view>
                     <connections>
                         <outlet property="ruleLbl" destination="uP4-a0-a6h" id="V3C-Ah-L81"/>
-                        <outlet property="selectedSuitImg" destination="rMe-C6-Rhg" id="hDF-Bk-dfc"/>
+                        <outlet property="selectedSuitImg" destination="rMe-C6-Rhg" id="kKD-1S-OY3"/>
                         <outlet property="titleLbl" destination="zRh-oi-8lC" id="HZ5-Ro-7KD"/>
+                        <outlet property="trumpSuitImg" destination="koa-sL-Npe" id="ZsE-Qo-ppA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmU-2Q-VYX" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -12,8 +12,8 @@ class PlayingVC: UIViewController {
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var ruleLbl: UILabel!
-    @IBOutlet weak var trumpSuitLbl: UILabel!
     @IBOutlet weak var selectedSuitImg: UIImageView!
+    @IBOutlet weak var trumpSuitImg: UIImageView!
     
     let ruleCount = 5
     var ruleNumber: Int! {
@@ -25,9 +25,18 @@ class PlayingVC: UIViewController {
     var trumpSuit: Suit? {
         didSet {
             if (trumpSuit != nil) {
-                trumpSuitLbl.text = "Trump Suit: \(trumpSuit)"
+                trumpSuitImg.image = UIImage(named: trumpSuit!.rawValue)
             } else {
-                trumpSuitLbl.text = "Trump Suit: N/A"
+                trumpSuitImg.image = UIImage(named: "NA")
+            }
+        }
+    }
+    var selectedSuit: Suit? {
+        didSet {
+            if (selectedSuit != nil) {
+                selectedSuitImg.image = UIImage(named: trumpSuit!.rawValue)
+            } else {
+                selectedSuitImg.image = UIImage(named: "NA")
             }
         }
     }
@@ -35,12 +44,25 @@ class PlayingVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        displayLesson(rule: 1)
+        displayLesson(ruleNumber: 1)
     }
     
-    func displayLesson(rule: Int) {
-        ruleNumber = rule
-        trumpSuit = nil
+    func displayLesson(ruleNumber: Int) {
+        
+        switch ruleNumber {
+        case 1:
+            return
+        case 2:
+            return
+        case 3:
+            return
+        case 4:
+            return
+        case 5:
+            return
+        default:
+            print("something wrong occured; displaying rule \(ruleNumber) of 5.")
+        }
         
         // rule 1: display 1-13 on cards (no trump, no selected)
         // rule 2: let player play (no trump, selected)
