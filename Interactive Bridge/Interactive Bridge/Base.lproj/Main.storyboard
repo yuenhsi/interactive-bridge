@@ -364,6 +364,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cardA" destination="89h-xG-W6n" id="phE-hm-9pf"/>
+                        <outlet property="cardB" destination="V1P-2g-WE4" id="MI9-DZ-r7U"/>
+                        <outlet property="cardC" destination="H5L-1k-MGO" id="M2Y-MA-IrD"/>
+                        <outlet property="cardD" destination="9sa-GJ-nW2" id="L1I-My-i8G"/>
+                        <outlet property="cardE" destination="HFp-V4-7tt" id="vO3-XX-aek"/>
+                        <outlet property="cardF" destination="R2I-RI-XLJ" id="Hd7-j4-vxw"/>
+                        <outlet property="cardG" destination="1OR-fr-DAP" id="u5k-zH-Bwl"/>
+                        <outlet property="cardH" destination="TY4-bf-i0D" id="457-I9-Iqh"/>
+                        <outlet property="cardI" destination="07K-Sx-E3e" id="2wQ-Db-6Tn"/>
+                        <outlet property="cardJ" destination="Ctt-kE-lnx" id="Xhd-yA-pN4"/>
+                        <outlet property="cardK" destination="QDF-aU-3cY" id="ydt-aV-He4"/>
+                        <outlet property="cardL" destination="fKx-ce-5xT" id="W3s-aw-A1I"/>
+                        <outlet property="cardM" destination="3lm-ZE-gDO" id="DOM-Nu-DCl"/>
                         <outlet property="ruleLbl" destination="uP4-a0-a6h" id="V3C-Ah-L81"/>
                         <outlet property="selectedSuitImg" destination="rMe-C6-Rhg" id="kKD-1S-OY3"/>
                         <outlet property="titleLbl" destination="zRh-oi-8lC" id="HZ5-Ro-7KD"/>

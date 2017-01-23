@@ -14,6 +14,19 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var ruleLbl: UILabel!
     @IBOutlet weak var selectedSuitImg: UIImageView!
     @IBOutlet weak var trumpSuitImg: UIImageView!
+    @IBOutlet weak var cardA: UIImageView!
+    @IBOutlet weak var cardB: UIImageView!
+    @IBOutlet weak var cardC: UIImageView!
+    @IBOutlet weak var cardD: UIImageView!
+    @IBOutlet weak var cardE: UIImageView!
+    @IBOutlet weak var cardF: UIImageView!
+    @IBOutlet weak var cardG: UIImageView!
+    @IBOutlet weak var cardH: UIImageView!
+    @IBOutlet weak var cardI: UIImageView!
+    @IBOutlet weak var cardJ: UIImageView!
+    @IBOutlet weak var cardK: UIImageView!
+    @IBOutlet weak var cardL: UIImageView!
+    @IBOutlet weak var cardM: UIImageView!
     
     let ruleCount = 5
     var ruleNumber: Int! {
@@ -51,7 +64,12 @@ class PlayingVC: UIViewController {
         
         switch ruleNumber {
         case 1:
-            return
+            let label = UILabel(frame: CGRect(x: cardA.superview!.frame.origin.x + cardA.frame.origin.x, y: cardA.superview!.frame.origin.y + cardA.frame.origin.y, width: cardA.frame.width, height: cardA.frame.width))
+            
+            label.textAlignment = .center
+            label.text = "1"
+            self.view.addSubview(label)
+
         case 2:
             return
         case 3:
