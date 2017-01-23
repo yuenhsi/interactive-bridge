@@ -60,13 +60,13 @@ class PlayingVC: UIViewController {
         super.viewDidLoad()
     
         populateCardImages()
-        displayLesson(ruleNumber: 1)
+        currentRule = 1
+        displayLesson()
     }
     
-    func displayLesson(ruleNumber: Int) {
+    func displayLesson() {
         
-        currentRule = ruleNumber
-        switch ruleNumber {
+        switch currentRule {
         case 1:
             for cardNumber in 0..<13 {
                 let currentCard = cardImages[cardNumber]
@@ -77,9 +77,7 @@ class PlayingVC: UIViewController {
                 label.textColor = UIColor.red
                 label.font = UIFont(name: "AvenirNext-Heavy", size: 40)
                 self.view.addSubview(label)
-                
             }
-
         case 2:
             return
         case 3:
@@ -89,7 +87,7 @@ class PlayingVC: UIViewController {
         case 5:
             return
         default:
-            print("something wrong occured; displaying rule \(ruleNumber) of 5.")
+            print("something wrong occured; displaying rule \(currentRule) of 5.")
         }
         
         // rule 1: display 1-13 on cards (no trump, no selected)
@@ -115,4 +113,11 @@ class PlayingVC: UIViewController {
         cardImages.append(cardM)
     }
 
+    @IBAction func nextBtnPressed(_ sender: Any) {
+        currentRule = currentRule! + 1
+        if currentRule > playingRules.count {
+            currentRule = 1
+        }
+        displayLesson()
+    }
 }
