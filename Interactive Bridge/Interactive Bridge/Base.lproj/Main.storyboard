@@ -273,7 +273,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="BU5-RS-UP0" firstAttribute="leading" secondItem="Y4O-od-g96" secondAttribute="leading" constant="8" id="3HF-Id-lLH"/>
                                     <constraint firstItem="rMe-C6-Rhg" firstAttribute="centerY" secondItem="Y4O-od-g96" secondAttribute="centerY" id="8ga-tS-GjU"/>
@@ -299,7 +299,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="koa-sL-Npe" firstAttribute="leading" secondItem="tLX-3i-8vH" secondAttribute="trailing" constant="5" id="Mek-gw-bLn"/>
                                     <constraint firstItem="koa-sL-Npe" firstAttribute="height" secondItem="IC4-uL-Gxd" secondAttribute="height" constant="-5" id="oGO-Hh-aVH"/>
