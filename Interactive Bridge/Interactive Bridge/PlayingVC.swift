@@ -27,6 +27,10 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var cardK: UIImageView!
     @IBOutlet weak var cardL: UIImageView!
     @IBOutlet weak var cardM: UIImageView!
+    @IBOutlet weak var cardNorth: UIImageView!
+    @IBOutlet weak var cardSouth: UIImageView!
+    @IBOutlet weak var cardEast: UIImageView!
+    @IBOutlet weak var cardWest: UIImageView!
     
     let ruleCount = 5
     var currentRule: Int! {
