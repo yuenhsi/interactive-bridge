@@ -59,6 +59,7 @@ class PlayingVC: UIViewController {
     var playerHand: [Card]? {
         didSet {
             if ((playerHand?.count)! > 0 && (playerHand?.count)! <= 13) {
+                playerHand!.sort { sortCardsBySuit(first: $0, second: $1) }
                 for (index, card) in playerHand!.enumerated() {
                     cardImages[index].image = UIImage(named: "card\(card.Suit.rawValue)\(card.Rank.rawValue)")
                 }
@@ -120,6 +121,14 @@ class PlayingVC: UIViewController {
             if v.tag == 322 {
                 v.removeFromSuperview()
             }
+        }
+    }
+    
+    func sortCardsBySuit(first: Card, second: Card) -> Bool {
+        if first.Suit == second.Suit {
+            return first.Rank.hashValue > second.Rank.hashValue
+        } else {
+            return first.Suit.hashValue > second.Suit.hashValue
         }
     }
     
