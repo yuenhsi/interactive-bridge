@@ -29,10 +29,10 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var cardM: UIImageView!
     
     let ruleCount = 5
-    var ruleNumber: Int! {
+    var currentRule: Int! {
         didSet {
-            titleLbl.text = "Playing: Rule \(ruleNumber!) / \(ruleCount)"
-            ruleLbl.text = playingRules[ruleNumber - 1]
+            titleLbl.text = "Playing: Rule \(currentRule!) / \(ruleCount)"
+            ruleLbl.text = playingRules[currentRule - 1]
         }
     }
     var trumpSuit: Suit? {
@@ -53,22 +53,32 @@ class PlayingVC: UIViewController {
             }
         }
     }
+    var cardImages = [UIImageView]()
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
+    
+        populateCardImages()
         displayLesson(ruleNumber: 1)
     }
     
     func displayLesson(ruleNumber: Int) {
         
+        currentRule = ruleNumber
         switch ruleNumber {
         case 1:
-            let label = UILabel(frame: CGRect(x: cardA.superview!.frame.origin.x + cardA.frame.origin.x, y: cardA.superview!.frame.origin.y + cardA.frame.origin.y, width: cardA.frame.width, height: cardA.frame.width))
-            
-            label.textAlignment = .center
-            label.text = "1"
-            self.view.addSubview(label)
+            for cardNumber in 0..<13 {
+                let currentCard = cardImages[cardNumber]
+                let label = UILabel(frame: CGRect(x: 0, y: 0, width: currentCard.frame.width, height: currentCard.frame.width))
+                label.center = CGPoint(x: currentCard.superview!.frame.origin.x + currentCard.frame.midX, y: currentCard.superview!.frame.origin.y + currentCard.frame.midY)
+                label.textAlignment = .center
+                label.text = "\(cardNumber + 1)"
+                label.textColor = UIColor.red
+                label.font = UIFont(name: "AvenirNext-Heavy", size: 40)
+                self.view.addSubview(label)
+                
+            }
 
         case 2:
             return
@@ -87,6 +97,22 @@ class PlayingVC: UIViewController {
         // rule 3: let player trump (trump, selected)
         // rule 4: let player trump (trump, selected)
         // rule 5: play (trump, selected)
+    }
+    
+    func populateCardImages() {
+        cardImages.append(cardA)
+        cardImages.append(cardB)
+        cardImages.append(cardC)
+        cardImages.append(cardD)
+        cardImages.append(cardE)
+        cardImages.append(cardF)
+        cardImages.append(cardG)
+        cardImages.append(cardH)
+        cardImages.append(cardI)
+        cardImages.append(cardJ)
+        cardImages.append(cardK)
+        cardImages.append(cardL)
+        cardImages.append(cardM)
     }
 
 }

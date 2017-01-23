@@ -14,7 +14,7 @@ enum Tutorial: String {
 
 let playingRules =
     [
-        "The aim of Bridge is to win as many Tricks as possible between you and your partner, who sits opposite you. There are 13 tricks per game, one for every card in the players' hand.",
+        "The aim of Bridge is to win as many Tricks as possible between you and your partner, who sits opposite you. There are 13 tricks per game, one for every card in each players' hand.",
         "The person who leads decides the suit everyone must follow as the play moves clockwise around the table.",
         "The person who plays the highest card in the decided suit wins the trick, unless there is a trump suit.",
         "If there is a trump suit in play, the person who played the highest trump card wins the trick.",
