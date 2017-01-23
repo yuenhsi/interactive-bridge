@@ -65,7 +65,7 @@ class PlayingVC: UIViewController {
     }
     
     func displayLesson() {
-        
+        cleanup()
         switch currentRule {
         case 1:
             for cardNumber in 0..<13 {
@@ -76,6 +76,7 @@ class PlayingVC: UIViewController {
                 label.text = "\(cardNumber + 1)"
                 label.textColor = UIColor.red
                 label.font = UIFont(name: "AvenirNext-Heavy", size: 40)
+                label.tag = 322
                 self.view.addSubview(label)
             }
         case 2:
@@ -97,6 +98,14 @@ class PlayingVC: UIViewController {
         // rule 5: play (trump, selected)
     }
     
+    func cleanup() {
+        for v in view.subviews {
+            if v.tag == 322 {
+                v.removeFromSuperview()
+            }
+        }
+    }
+    
     func populateCardImages() {
         cardImages.append(cardA)
         cardImages.append(cardB)
@@ -114,9 +123,10 @@ class PlayingVC: UIViewController {
     }
 
     @IBAction func nextBtnPressed(_ sender: Any) {
-        currentRule = currentRule! + 1
-        if currentRule > playingRules.count {
+        if currentRule == playingRules.count {
             currentRule = 1
+        } else {
+            currentRule = currentRule! + 1
         }
         displayLesson()
     }
