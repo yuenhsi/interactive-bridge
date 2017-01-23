@@ -32,10 +32,9 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var cardEast: UIImageView!
     @IBOutlet weak var cardWest: UIImageView!
     
-    let ruleCount = 5
     var currentRule: Int! {
         didSet {
-            titleLbl.text = "Playing: Rule \(currentRule!) / \(ruleCount)"
+            titleLbl.text = "Playing: Rule \(currentRule!) / \(playingRules.count)"
             ruleLbl.text = playingRules[currentRule - 1]
         }
     }
@@ -57,7 +56,16 @@ class PlayingVC: UIViewController {
             }
         }
     }
-    var cardImages = [UIImageView]()
+    var playerHand: [Card]? {
+        didSet {
+            if ((playerHand?.count)! > 0 && (playerHand?.count)! <= 13) {
+                for (index, card) in playerHand!.enumerated() {
+                    cardImages[index].image = UIImage(named: "Card\(card.Suit.rawValue)\(card.Rank.rawValue)")
+                }
+            }
+        }
+    }
+    var cardImages: [UIImageView]!
 
     override func viewDidLoad() {
         
@@ -84,7 +92,11 @@ class PlayingVC: UIViewController {
                 self.view.addSubview(label)
             }
         case 2:
-            return
+            if var deck = Deck() {
+                let hands = deck.deal(players: 4)
+                playerHand = hands[0]
+            }
+            
         case 3:
             return
         case 4:
@@ -111,6 +123,7 @@ class PlayingVC: UIViewController {
     }
     
     func populateCardImages() {
+        cardImages = [UIImageView]()
         cardImages.append(cardA)
         cardImages.append(cardB)
         cardImages.append(cardC)
