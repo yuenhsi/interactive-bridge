@@ -22,6 +22,15 @@ class PlayingVC: UIViewController {
             ruleLbl.text = playingRules[ruleNumber - 1]
         }
     }
+    var trumpSuit: Suit? {
+        didSet {
+            if (trumpSuit != nil) {
+                trumpSuitLbl.text = "Trump Suit: \(trumpSuit)"
+            } else {
+                trumpSuitLbl.text = "Trump Suit: N/A"
+            }
+        }
+    }
 
     override func viewDidLoad() {
         
@@ -31,6 +40,7 @@ class PlayingVC: UIViewController {
     
     func displayLesson(rule: Int) {
         ruleNumber = rule
+        trumpSuit = nil
         
         // rule 1: display 1-13 on cards (no trump, no selected)
         // rule 2: let player play (no trump, selected)
