@@ -41,6 +41,9 @@ struct Deck {
     mutating func deal(players: Int) -> [[Card]] {
         // this func breaks if cards.count is not divisible by the number of players
         var hands = [[Card]]()
+        for _ in 0..<players {
+            hands.append([Card]())
+        }
         while(cards.count > 0) {
             for playerIndex in 0..<players {
                 hands[playerIndex].append(draw())

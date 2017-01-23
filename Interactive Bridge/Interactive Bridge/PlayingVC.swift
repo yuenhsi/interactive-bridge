@@ -60,7 +60,7 @@ class PlayingVC: UIViewController {
         didSet {
             if ((playerHand?.count)! > 0 && (playerHand?.count)! <= 13) {
                 for (index, card) in playerHand!.enumerated() {
-                    cardImages[index].image = UIImage(named: "Card\(card.Suit.rawValue)\(card.Rank.rawValue)")
+                    cardImages[index].image = UIImage(named: "card\(card.Suit.rawValue)\(card.Rank.rawValue)")
                 }
             }
         }
@@ -93,6 +93,7 @@ class PlayingVC: UIViewController {
             }
         case 2:
             if var deck = Deck() {
+                deck.shuffle()
                 let hands = deck.deal(players: 4)
                 playerHand = hands[0]
             }
