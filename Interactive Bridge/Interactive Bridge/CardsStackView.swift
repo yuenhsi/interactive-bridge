@@ -9,17 +9,23 @@
 import UIKit
 
 class CardsStackView: UIStackView {
-
-    func redraw() {
-        self.subviews.forEach({ $0.removeFromSuperview() })
-    }
     
-    func addCards(_ cards: [Card]) {
-        for card in cards {
-            let cardImg = UIImage(named: getCardImageName(card))
-            let cardImage = CardImageView(image: cardImg)
-            cardImage.contentMode = .scaleAspectFit
-            self.addArrangedSubview(cardImage)
+    func refreshCards(_ cards: [Card]) {
+        self.subviews.forEach({ $0.removeFromSuperview() })
+        if (cards.count != 0) {
+            for card in cards {
+                let cardImg = UIImage(named: getCardImageName(card))
+                let cardImage = CardImageView(image: cardImg)
+                cardImage.contentMode = .scaleAspectFit
+                self.addArrangedSubview(cardImage)
+            }
+        } else {
+            for _ in 1...13 {
+                let cardImg = UIImage(named: "cardBack")
+                let cardImage = CardImageView(image: cardImg)
+                cardImage.contentMode = .scaleAspectFit
+                self.addArrangedSubview(cardImage)
+            }
         }
     }
 

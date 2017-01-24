@@ -48,13 +48,8 @@ class PlayingVC: UIViewController {
         didSet {
             if (playerHand != nil) {
                 playerHand!.sort { sortCardsBySuit(first: $0, second: $1) }
-                let stack = playerCardsStk as! CardsStackView
-                stack.redraw()
-                stack.addCards(playerHand!)
-            } else {
-                // set as cardBack
             }
-            
+            (playerCardsStk as! CardsStackView).refreshCards(playerHand!)
         }
     }
 
@@ -67,7 +62,6 @@ class PlayingVC: UIViewController {
     }
     
     func displayLesson() {
-        cleanup()
         switch currentRule {
         case 1:
             for v in playerCardsStk.subviews {
@@ -76,14 +70,13 @@ class PlayingVC: UIViewController {
                 }
             }
         case 2:
-            if var deck = Deck() {
-                deck.shuffle()
-                var hands = deck.deal(players: 4)
-                // by convention, playerHand is always the first item, followed by West, North, then East
-                playerHand = hands[0]
+            var deck = Deck()
+            deck.shuffle()
+            var hands = deck.deal(players: 4)
+            // by convention, playerHand is always the first item, followed by West, North, then East; player is always South.
+            playerHand = hands[0]
 //                let playedRound = playRound(lead: .west, hands: &hands)
 //                animatePlayCards(round: playedRound, lead: .west)
-            }
             
         case 3:
             return
@@ -100,14 +93,6 @@ class PlayingVC: UIViewController {
         // rule 3: let player trump (trump, selected)
         // rule 4: let player trump (trump, selected)
         // rule 5: play (trump, selected)
-    }
-    
-    func cleanup() {
-        for v in view.subviews {
-            if v.tag == 322 {
-                v.removeFromSuperview()
-            }
-        }
     }
     
     func animatePlayCards(round: [Card], lead: Position) {
