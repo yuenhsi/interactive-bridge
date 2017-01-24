@@ -29,11 +29,12 @@ class CardImageView: UIImageView {
     func setLabel(labelText: String) {
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.width))
-        label.center = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        label.center = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         label.textAlignment = .center
         label.text = labelText
         label.textColor = UIColor.red
         label.font = UIFont(name: "AvenirNext-Heavy", size: 40)
+        addSubview(label)
         
     }
     
