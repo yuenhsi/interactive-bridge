@@ -70,7 +70,7 @@ class PlayingVC: UIViewController {
                 }
             }
         case 2:
-            var deck = Deck()
+            var deck = Deck()!
             deck.shuffle()
             var hands = deck.deal(players: 4)
             // by convention, playerHand is always the first item, followed by West, North, then East; player is always South.
