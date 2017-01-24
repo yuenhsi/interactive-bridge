@@ -58,3 +58,7 @@ func playRound(lead: Position, hands: inout [[Card]]) -> [Card] {
 func finishRound() {
     
 }
+
+func getCardImageName(_ card: Card) -> String {
+    return "card\(card.Suit.rawValue)\(card.Rank.rawValue)"
+}

@@ -19,6 +19,7 @@
 		5AB04C5C1E32941D0046C996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB04C5B1E32941D0046C996 /* Assets.xcassets */; };
 		5AB04C5F1E32941D0046C996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB04C5D1E32941D0046C996 /* LaunchScreen.storyboard */; };
 		5AB04C711E33361A0046C996 /* SelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB04C701E33361A0046C996 /* SelectionVC.swift */; };
+		5AE5E25A1E37E10C00A15138 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE5E2591E37E10C00A15138 /* CardImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5AB04C5E1E32941D0046C996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5AB04C601E32941D0046C996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB04C701E33361A0046C996 /* SelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionVC.swift; sourceTree = "<group>"; };
+		5AE5E2591E37E10C00A15138 /* CardImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				5A5AA6351E358E40001BF382 /* Card.swift */,
 				5A5AA6331E3550A7001BF382 /* Constants.swift */,
 				5A02D8011E36B2BA00B59795 /* Deck.swift */,
+				5AE5E2591E37E10C00A15138 /* CardImageView.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE5E25A1E37E10C00A15138 /* CardImageView.swift in Sources */,
 				5AB04C571E32941D0046C996 /* WelcomeVC.swift in Sources */,
 				5A5AA6301E354C72001BF382 /* BorderedLabel.swift in Sources */,
 				5A5AA6361E358E40001BF382 /* Card.swift in Sources */,
