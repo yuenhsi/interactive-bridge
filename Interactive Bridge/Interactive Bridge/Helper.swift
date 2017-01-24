@@ -18,6 +18,7 @@ func sortCardsBySuit(first: Card, second: Card) -> Bool {
 }
 
 func playRound(lead: Position, hands: inout [[Card]]) -> [Card] {
+    var playedCards = [Card]()
     var startingPosition: Int!
     switch lead {
     case .west:
@@ -27,9 +28,33 @@ func playRound(lead: Position, hands: inout [[Card]]) -> [Card] {
     case .east:
         startingPosition = 3
     case .south:
-        return [Card]()
+        return playedCards
     }
-//    let card = hands[startingPosition].remove(at: 0)
+    var selectedSuit: Suit!
+    for player in startingPosition ... 4 - startingPosition {
+        // check whether this player is leading
+        var card: Card
+        if player == startingPosition {
+            card = hands[player].remove(at: 0)
+            selectedSuit = card.Suit
+        } else {
+            // just play a random card of correct suit, or a random card for now
+            if let i = hands[player].index(where: { $0.Suit == selectedSuit }) {
+                card = hands[player].remove(at: i)
+            } else {
+                // not very intelligent for now...
+                card = hands[player].remove(at: 0)
+            }
+        }
+        playedCards.append(card)
+    }
     
-    return [Card]()
+    
+    
+    return playedCards
+}
+
+// stub, for continuation after player plays his card
+func finishRound() {
+    
 }
