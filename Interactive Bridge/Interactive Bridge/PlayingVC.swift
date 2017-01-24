@@ -75,8 +75,8 @@ class PlayingVC: UIViewController {
             var hands = deck.deal(players: 4)
             // by convention, playerHand is always the first item, followed by West, North, then East; player is always South.
             playerHand = hands[0]
-//                let playedRound = playRound(lead: .west, hands: &hands)
-//                animatePlayCards(round: playedRound, lead: .west)
+            let playedRound = playRound(lead: .west, hands: &hands)
+            animatePlayCards(round: playedRound, lead: .west)
             
         case 3:
             return
@@ -105,17 +105,18 @@ class PlayingVC: UIViewController {
         while !roundOver {
             switch(currentTurn) {
             case .west:
-                cardWest.image = UIImage(named: "card\(round[currentIndex].Suit.rawValue)\(round[currentIndex].Rank.rawValue)")
+                
+                cardWest.image = UIImage(named: getCardImageName(round[currentIndex]))
                 cardWest.layer.zPosition = 1
                 currentIndex += 1
                 currentTurn = .north
             case .north:
-                cardNorth.image = UIImage(named: "card\(round[currentIndex].Suit.rawValue)\(round[currentIndex].Rank.rawValue)")
+                cardNorth.image = UIImage(named: getCardImageName(round[currentIndex]))
                 cardNorth.layer.zPosition = 2
                 currentIndex += 1
                 currentTurn = .east
             case .east:
-                cardEast.image = UIImage(named: "card\(round[currentIndex].Suit.rawValue)\(round[currentIndex].Rank.rawValue)")
+                cardEast.image = UIImage(named: getCardImageName(round[currentIndex]))
                 cardEast.layer.zPosition = 3
                 currentIndex += 1
                 roundOver = true
