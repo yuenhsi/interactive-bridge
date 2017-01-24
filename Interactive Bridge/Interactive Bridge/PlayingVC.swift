@@ -98,8 +98,8 @@ class PlayingVC: UIViewController {
                 var hands = deck.deal(players: 4)
                 // by convention, playerHand is always the first item, followed by West, North, then East
                 playerHand = hands[0]
-                playRound(lead: .west, hands: &hands)
-                
+                let playedRound = playRound(lead: .west, hands: &hands)
+                animatePlayCards(round: playedRound, lead: .west)
             }
             
         case 3:
@@ -125,6 +125,38 @@ class PlayingVC: UIViewController {
                 v.removeFromSuperview()
             }
         }
+    }
+    
+    func animatePlayCards(round: [Card], lead: Position) {
+        if (lead == .south) {
+            return
+        }
+        var roundOver = false
+        var currentTurn = lead
+        var currentIndex = 0
+        while !roundOver {
+            switch(currentTurn) {
+            case .west:
+                cardWest.image = UIImage(named: "card\(round[currentIndex].Suit.rawValue)\(round[currentIndex].Rank.rawValue)")
+                cardWest.layer.zPosition = 1
+                currentIndex += 1
+                currentTurn = .north
+            case .north:
+                cardNorth.image = UIImage(named: "card\(round[currentIndex].Suit.rawValue)\(round[currentIndex].Rank.rawValue)")
+                cardNorth.layer.zPosition = 2
+                currentIndex += 1
+                currentTurn = .east
+            case .east:
+                cardEast.image = UIImage(named: "card\(round[currentIndex].Suit.rawValue)\(round[currentIndex].Rank.rawValue)")
+                cardEast.layer.zPosition = 3
+                currentIndex += 1
+                roundOver = true
+            case .south:
+                print("something went wrong.")
+                return
+            }
+        }
+        
     }
     
     func populateCardImages() {
