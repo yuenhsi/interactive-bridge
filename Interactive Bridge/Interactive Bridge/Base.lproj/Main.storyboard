@@ -196,7 +196,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title graphic" translatesAutoresizingMaskIntoConstraints="NO" id="J1F-oK-Psg">
                                 <rect key="frame" x="20" y="28" width="984" height="87"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5BF-xs-vzk">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5BF-xs-vzk" customClass="CardsStackView" customModule="Interactive_Bridge" customModuleProvider="target">
                                 <rect key="frame" x="58" y="570" width="908" height="120"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="89h-xG-W6n" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">

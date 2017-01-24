@@ -26,15 +26,6 @@ class PlayingVC: UIViewController {
             ruleLbl.text = playingRules[currentRule - 1]
         }
     }
-    var trumpSuit: Suit? {
-        didSet {
-            if (trumpSuit != nil) {
-                trumpSuitImg.image = UIImage(named: trumpSuit!.rawValue)
-            } else {
-                trumpSuitImg.image = UIImage(named: "NA")
-            }
-        }
-    }
     var selectedSuit: Suit? {
         didSet {
             if (selectedSuit != nil) {
@@ -44,14 +35,26 @@ class PlayingVC: UIViewController {
             }
         }
     }
+    var trumpSuit: Suit? {
+        didSet {
+            if (trumpSuit != nil) {
+                trumpSuitImg.image = UIImage(named: trumpSuit!.rawValue)
+            } else {
+                trumpSuitImg.image = UIImage(named: "NA")
+            }
+        }
+    }
     var playerHand: [Card]? {
         didSet {
-            if ((playerHand?.count)! > 0 && (playerHand?.count)! <= 13) {
+            if (playerHand != nil) {
                 playerHand!.sort { sortCardsBySuit(first: $0, second: $1) }
-                for (index, card) in playerHand!.enumerated() {
-//                    cardImages[index].image = UIImage(named: "card\(card.Suit.rawValue)\(card.Rank.rawValue)")
-                }
+                let stack = playerCardsStk as! CardsStackView
+                stack.redraw()
+                stack.addCards(playerHand!)
+            } else {
+                // set as cardBack
             }
+            
         }
     }
 
@@ -72,25 +75,14 @@ class PlayingVC: UIViewController {
                     card.setLabel(labelText: "\(card.tag)")
                 }
             }
-//            for cardNumber in 0..<13 {
-//                
-//                let label = UILabel(frame: CGRect(x: 0, y: 0, width: currentCard.frame.width, height: currentCard.frame.width))
-//                label.center = CGPoint(x: currentCard.superview!.frame.origin.x + currentCard.frame.midX, y: currentCard.superview!.frame.origin.y + currentCard.frame.midY)
-//                label.textAlignment = .center
-//                label.text = "\(cardNumber + 1)"
-//                label.textColor = UIColor.red
-//                label.font = UIFont(name: "AvenirNext-Heavy", size: 40)
-//                label.tag = 322
-//                self.view.addSubview(label)
-//            }
         case 2:
             if var deck = Deck() {
                 deck.shuffle()
                 var hands = deck.deal(players: 4)
                 // by convention, playerHand is always the first item, followed by West, North, then East
                 playerHand = hands[0]
-                let playedRound = playRound(lead: .west, hands: &hands)
-                animatePlayCards(round: playedRound, lead: .west)
+//                let playedRound = playRound(lead: .west, hands: &hands)
+//                animatePlayCards(round: playedRound, lead: .west)
             }
             
         case 3:
