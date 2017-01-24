@@ -18,8 +18,9 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var cardSouth: UIImageView!
     @IBOutlet weak var cardEast: UIImageView!
     @IBOutlet weak var cardWest: UIImageView!
-    @IBOutlet weak var playerCardsStk: UIStackView!
+    @IBOutlet weak var playerCardsStk: CardsStackView!
     
+    var listeningToTouches = false
     var currentRule: Int! {
         didSet {
             titleLbl.text = "Playing: Rule \(currentRule!) / \(playingRules.count)"
@@ -49,7 +50,7 @@ class PlayingVC: UIViewController {
             if (playerHand != nil) {
                 playerHand!.sort { sortCardsBySuit(first: $0, second: $1) }
             }
-            (playerCardsStk as! CardsStackView).refreshCards(playerHand!)
+            playerCardsStk.refreshCards(playerHand!)
         }
     }
 
@@ -69,6 +70,7 @@ class PlayingVC: UIViewController {
                     card.setLabel(labelText: "\(card.tag)")
                 }
             }
+            
         case 2:
             var deck = Deck()!
             deck.shuffle()
@@ -77,6 +79,7 @@ class PlayingVC: UIViewController {
             playerHand = hands[0]
             let playedRound = playRound(lead: .west, hands: &hands)
             animatePlayCards(round: playedRound, lead: .west)
+            listeningToTouches = true
             
         case 3:
             return
@@ -125,7 +128,13 @@ class PlayingVC: UIViewController {
                 return
             }
         }
-        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first {
+            let locationInStack = touch.location(in: playerCardsStk)
+            
+        }
     }
 
     @IBAction func nextBtnPressed(_ sender: Any) {

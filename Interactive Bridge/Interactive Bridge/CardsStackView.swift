@@ -20,10 +20,11 @@ class CardsStackView: UIStackView {
                 self.addArrangedSubview(cardImage)
             }
         } else {
-            for _ in 1...13 {
+            for tag in 1...13 {
                 let cardImg = UIImage(named: "cardBack")
                 let cardImage = CardImageView(image: cardImg)
                 cardImage.contentMode = .scaleAspectFit
+                cardImage.tag = tag
                 self.addArrangedSubview(cardImage)
             }
         }
