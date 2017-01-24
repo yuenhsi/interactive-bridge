@@ -95,8 +95,11 @@ class PlayingVC: UIViewController {
         case 2:
             if var deck = Deck() {
                 deck.shuffle()
-                let hands = deck.deal(players: 4)
+                var hands = deck.deal(players: 4)
+                // by convention, playerHand is always the first item, followed by West, North, then East
                 playerHand = hands[0]
+                playRound(lead: .west, hands: &hands)
+                
             }
             
         case 3:
@@ -121,14 +124,6 @@ class PlayingVC: UIViewController {
             if v.tag == 322 {
                 v.removeFromSuperview()
             }
-        }
-    }
-    
-    func sortCardsBySuit(first: Card, second: Card) -> Bool {
-        if first.Suit == second.Suit {
-            return first.Rank.hashValue > second.Rank.hashValue
-        } else {
-            return first.Suit.hashValue > second.Suit.hashValue
         }
     }
     

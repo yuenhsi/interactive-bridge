@@ -12,6 +12,10 @@ enum Tutorial: String {
     case playing, bidding, scoring
 }
 
+enum Position: String {
+    case north = "North", south = "South", east = "East", west = "West"
+}
+
 let playingRules =
     [
         "The aim of Bridge is to win as many Tricks as possible between you and your partner, who sits opposite you. There are 13 tricks per game, one for every card in each players' hand.",
