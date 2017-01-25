@@ -14,16 +14,16 @@ class CardsStackView: UIStackView {
         self.subviews.forEach({ $0.removeFromSuperview() })
         if (cards.count != 0) {
             for card in cards {
-                let cardImg = UIImage(named: getCardImageName(card))
-                let cardImage = CardImageView(image: cardImg)
+                let cardImage = CardImageView()
+                cardImage.setCard(card)
                 cardImage.contentMode = .scaleAspectFit
                 cardImage.isUserInteractionEnabled = true
                 self.addArrangedSubview(cardImage)
             }
         } else {
             for tag in 1...13 {
-                let cardImg = UIImage(named: "cardBack")
-                let cardImage = CardImageView(image: cardImg)
+                let cardImage = CardImageView()
+                cardImage.setCard(nil)
                 cardImage.contentMode = .scaleAspectFit
                 cardImage.tag = tag
                 cardImage.isUserInteractionEnabled = true

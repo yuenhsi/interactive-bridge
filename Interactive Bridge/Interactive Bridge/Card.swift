@@ -18,12 +18,19 @@ enum Suit: String {
     static let allValues = [diamonds, clubs, hearts, spades]
 }
 
-struct Card {
+struct Card : Equatable {
     var Rank: Rank
     var Suit: Suit
     
     init(rank: Rank, suit: Suit) {
         self.Rank = rank
         self.Suit = suit
+    }
+    
+    public static func ==(lhs: Card, rhs: Card) -> Bool {
+        if lhs.Rank == rhs.Rank && lhs.Suit == rhs.Suit {
+            return true
+        }
+        return false
     }
 }

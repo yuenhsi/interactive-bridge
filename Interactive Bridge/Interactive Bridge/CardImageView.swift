@@ -20,7 +20,7 @@ class CardImageView: UIImageView {
         }
     }
     
-    func setCard(_ card: Card) {
+    func setCard(_ card: Card?) {
         
         self.card = card
         
