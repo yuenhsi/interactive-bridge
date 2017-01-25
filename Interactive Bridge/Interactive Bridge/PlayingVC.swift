@@ -19,6 +19,7 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var cardEast: UIImageView!
     @IBOutlet weak var cardWest: UIImageView!
     @IBOutlet weak var playerCardsStk: CardsStackView!
+    @IBOutlet weak var warningLbl: UILabel!
     
     var currentRule: Int! {
         didSet {
@@ -132,16 +133,10 @@ class PlayingVC: UIViewController {
         if (selectedCard?.card!.Suit != selectedSuit) {
             self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
             
-            let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width))
-            label.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2)
-            label.textAlignment = .center
-            label.text = "asdfasdfafdafdsafa"
-            label.textColor = UIColor.red
-            label.font = UIFont(name: "AvenirNext-Heavy", size: 40)
-            view.addSubview(label)
+            warningLbl.text = "Please follow suit!"
             
             UIView.animate(withDuration: 20, animations: {
-                label.alpha = 0
+                warningLbl.alpha = 0
             })
         }
     }
