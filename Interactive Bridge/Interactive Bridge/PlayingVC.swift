@@ -20,7 +20,6 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var cardWest: UIImageView!
     @IBOutlet weak var playerCardsStk: CardsStackView!
     
-    var listeningToTouches = false
     var currentRule: Int! {
         didSet {
             titleLbl.text = "Playing: Rule \(currentRule!) / \(playingRules.count)"
@@ -79,7 +78,7 @@ class PlayingVC: UIViewController {
             playerHand = hands[0]
             let playedRound = playRound(lead: .west, hands: &hands)
             animatePlayCards(round: playedRound, lead: .west)
-            listeningToTouches = true
+            enableTouches()
             
         case 3:
             return
@@ -98,6 +97,20 @@ class PlayingVC: UIViewController {
         // rule 5: play (trump, selected)
     }
     
+    func enableTouches() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handTapped))
+        view.addGestureRecognizer(tap)
+        playerCardsStk.enableUserInteractionForSubviews()
+    }
+    
+    func handTapped(sender: UIGestureRecognizer) {
+        print("got here!")
+        let location = sender.location(in: playerCardsStk)
+        let touchedView = playerCardsStk.hitTest(location, with: nil)
+        print("\(touchedView)")
+        
+    }
+    
     func animatePlayCards(round: [Card], lead: Position) {
         if (lead == .south) {
             return
@@ -108,7 +121,6 @@ class PlayingVC: UIViewController {
         while !roundOver {
             switch(currentTurn) {
             case .west:
-                
                 cardWest.image = UIImage(named: getCardImageName(round[currentIndex]))
                 cardWest.layer.zPosition = 1
                 currentIndex += 1
@@ -127,13 +139,6 @@ class PlayingVC: UIViewController {
                 print("something went wrong.")
                 return
             }
-        }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let locationInStack = touch.location(in: playerCardsStk)
-            
         }
     }
 

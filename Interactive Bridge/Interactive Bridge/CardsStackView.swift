@@ -29,5 +29,11 @@ class CardsStackView: UIStackView {
             }
         }
     }
+    
+    func enableUserInteractionForSubviews() {
+        for v in self.subviews {
+            v.isUserInteractionEnabled = true
+        }
+    }
 
 }
