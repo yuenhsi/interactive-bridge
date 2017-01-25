@@ -53,13 +53,13 @@ class PlayingVC: UIViewController {
         }
     }
     var respondingToTouches = false
-    var selectedCard: Card?
+    var selectedCard: CardImageView?
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handTapped))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapOccurred))
         view.addGestureRecognizer(tap)
     
         currentRule = 1
@@ -83,8 +83,7 @@ class PlayingVC: UIViewController {
             playerHand = hands[0]
             let playedRound = playRound(lead: .west, hands: &hands)
             animatePlayCards(round: playedRound, lead: .west)
-            enableTouches()
-            
+            respondingToTouches = true
         case 3:
             return
         case 4:
@@ -102,10 +101,29 @@ class PlayingVC: UIViewController {
         // rule 5: play (trump, selected)
     }
     
-    func handTapped(sender: UIGestureRecognizer) {
-        let location = sender.location(in: playerCardsStk)
-        let touchedView = playerCardsStk.hitTest(location, with: nil)
-        print("\(touchedView)")
+    func tapOccurred(sender: UIGestureRecognizer) {
+        if (respondingToTouches) {
+            let location = sender.location(in: playerCardsStk)
+            let touchedView = playerCardsStk.hitTest(location, with: nil)
+            if let tappedCard = touchedView as? CardImageView {
+                if (selectedCard == nil) {
+                    selectedCard = tappedCard
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: -20)
+                    })
+                } else {
+                    if selectedCard!.card == tappedCard.card! {
+//                        playSelectedCard()
+                    } else {
+                        self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
+                        selectedCard = tappedCard
+                        UIView.animate(withDuration: 0.3, animations: {
+                            self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: -20)
+                        })
+                    }
+                }
+            }
+        }
         
     }
     
