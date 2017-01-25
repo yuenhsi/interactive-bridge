@@ -136,7 +136,7 @@ class PlayingVC: UIViewController {
             warningLbl.text = "Please follow suit!"
             
             UIView.animate(withDuration: 20, animations: {
-                warningLbl.alpha = 0
+                self.warningLbl.alpha = 0
             })
         }
     }
