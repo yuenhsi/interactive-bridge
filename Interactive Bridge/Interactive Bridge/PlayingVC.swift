@@ -29,7 +29,7 @@ class PlayingVC: UIViewController {
     var selectedSuit: Suit? {
         didSet {
             if (selectedSuit != nil) {
-                selectedSuitImg.image = UIImage(named: trumpSuit!.rawValue)
+                selectedSuitImg.image = UIImage(named: selectedSuit!.rawValue)
             } else {
                 selectedSuitImg.image = UIImage(named: "NA")
             }
@@ -113,7 +113,7 @@ class PlayingVC: UIViewController {
                     })
                 } else {
                     if selectedCard!.card == tappedCard.card! {
-//                        playSelectedCard()
+                        playSelectedCard()
                     } else {
                         self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
                         selectedCard = tappedCard
@@ -131,6 +131,7 @@ class PlayingVC: UIViewController {
         if (lead == .south) {
             return
         }
+        selectedSuit = round[0].Suit
         var roundOver = false
         var currentTurn = lead
         var currentIndex = 0
