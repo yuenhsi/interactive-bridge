@@ -114,6 +114,7 @@ class PlayingVC: UIViewController {
                 } else {
                     if selectedCard!.card == tappedCard.card! {
                         playSelectedCard()
+                        selectedCard = nil
                     } else {
                         self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
                         selectedCard = tappedCard
@@ -125,6 +126,24 @@ class PlayingVC: UIViewController {
             }
         }
         
+    }
+    
+    func playSelectedCard() {
+        if (selectedCard?.card!.Suit != selectedSuit) {
+            self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
+            
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.width))
+            label.center = CGPoint(x: view.frame.width / 2, y: view.frame.height / 2)
+            label.textAlignment = .center
+            label.text = "asdfasdfafdafdsafa"
+            label.textColor = UIColor.red
+            label.font = UIFont(name: "AvenirNext-Heavy", size: 40)
+            view.addSubview(label)
+            
+            UIView.animate(withDuration: 20, animations: {
+                label.alpha = 0
+            })
+        }
     }
     
     func animatePlayCards(round: [Card], lead: Position) {
