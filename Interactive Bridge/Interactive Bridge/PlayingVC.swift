@@ -52,10 +52,15 @@ class PlayingVC: UIViewController {
             playerCardsStk.refreshCards(playerHand!)
         }
     }
+    var respondingToTouches = false
+    var selectedCard: Card?
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handTapped))
+        view.addGestureRecognizer(tap)
     
         currentRule = 1
         displayLesson()
@@ -97,14 +102,7 @@ class PlayingVC: UIViewController {
         // rule 5: play (trump, selected)
     }
     
-    func enableTouches() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handTapped))
-        view.addGestureRecognizer(tap)
-        playerCardsStk.enableUserInteractionForSubviews()
-    }
-    
     func handTapped(sender: UIGestureRecognizer) {
-        print("got here!")
         let location = sender.location(in: playerCardsStk)
         let touchedView = playerCardsStk.hitTest(location, with: nil)
         print("\(touchedView)")

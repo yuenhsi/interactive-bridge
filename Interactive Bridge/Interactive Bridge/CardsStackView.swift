@@ -17,6 +17,7 @@ class CardsStackView: UIStackView {
                 let cardImg = UIImage(named: getCardImageName(card))
                 let cardImage = CardImageView(image: cardImg)
                 cardImage.contentMode = .scaleAspectFit
+                cardImage.isUserInteractionEnabled = true
                 self.addArrangedSubview(cardImage)
             }
         } else {
@@ -25,14 +26,9 @@ class CardsStackView: UIStackView {
                 let cardImage = CardImageView(image: cardImg)
                 cardImage.contentMode = .scaleAspectFit
                 cardImage.tag = tag
+                cardImage.isUserInteractionEnabled = true
                 self.addArrangedSubview(cardImage)
             }
-        }
-    }
-    
-    func enableUserInteractionForSubviews() {
-        for v in self.subviews {
-            v.isUserInteractionEnabled = true
         }
     }
 
