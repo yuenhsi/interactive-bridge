@@ -102,7 +102,6 @@ class PlayingVC: UIViewController {
             playerHand = hands[0]
             let playedRound = playRound(lead: .west, hands: &hands)
             animatePlayCards(round: playedRound, lead: .west)
-            respondingToTouches = true
         case 3:
             return
         case 4:
@@ -177,19 +176,25 @@ class PlayingVC: UIViewController {
         while !roundOver {
             switch(currentTurn) {
             case .west:
-                cardWest.image = UIImage(named: getCardImageName(round[currentIndex]))
-                cardWest.layer.zPosition = 1
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(currentIndex * 500)) { [currentIndex] in
+                    self.cardWest.image = UIImage(named: getCardImageName(round[currentIndex]))
+                    self.cardWest.layer.zPosition = 1
+                }
                 currentIndex += 1
                 currentTurn = .north
             case .north:
-                cardNorth.image = UIImage(named: getCardImageName(round[currentIndex]))
-                cardNorth.layer.zPosition = 2
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(currentIndex * 500)) { [currentIndex] in
+                    self.cardNorth.image = UIImage(named: getCardImageName(round[currentIndex]))
+                    self.cardNorth.layer.zPosition = 2
+                }
                 currentIndex += 1
                 currentTurn = .east
             case .east:
-                cardEast.image = UIImage(named: getCardImageName(round[currentIndex]))
-                cardEast.layer.zPosition = 3
-                currentIndex += 1
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(currentIndex * 500)) { [currentIndex] in
+                    self.cardEast.image = UIImage(named: getCardImageName(round[currentIndex]))
+                    self.cardEast.layer.zPosition = 3
+                    self.respondingToTouches = true
+                }
                 roundOver = true
             case .south:
                 print("something went wrong.")
