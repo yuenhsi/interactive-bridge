@@ -10,14 +10,12 @@ import UIKit
 
 class CardsStackView: UIStackView {
     
-    func refreshCards(_ cards: [Card]) {
+    func refreshCards(_ hand: Hand) {
         self.subviews.forEach({ $0.removeFromSuperview() })
-        if (cards.count != 0) {
-            for card in cards {
-                let cardImage = CardImageView()
-                cardImage.setCard(card)
-                self.addArrangedSubview(cardImage)
-            }
+        for card in hand.cards {
+            let cardImage = CardImageView()
+            cardImage.setCard(card)
+            self.addArrangedSubview(cardImage)
         }
     }
     
