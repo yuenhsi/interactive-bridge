@@ -131,13 +131,18 @@ class PlayingVC: UIViewController {
     
     func playSelectedCard() {
         if (selectedCard?.card!.Suit != selectedSuit) {
-            self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
+            selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
+            selectedCard = nil
             
             warningLbl.text = "Please follow suit!"
+            warningLbl.alpha = 1
             
-            UIView.animate(withDuration: 20, animations: {
+            UIView.animate(withDuration: 1, animations: {
                 self.warningLbl.alpha = 0
             })
+        } else {
+            cardSouth.image = UIImage(named: getCardImageName(selectedCard!.card!))
+            selectedCard = nil
         }
     }
     
