@@ -206,4 +206,13 @@ class PlayingVC: UIViewController {
         }
         startLessons()
     }
+    
+    @IBAction func prevBtnPressed(_ sender: Any) {
+        if currentRule == 1 {
+            currentRule = playingRules.count
+        } else {
+            currentRule = currentRule! - 1
+        }
+        startLessons()
+    }
 }

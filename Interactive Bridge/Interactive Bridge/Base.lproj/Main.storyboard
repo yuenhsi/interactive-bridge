@@ -151,8 +151,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Board" translatesAutoresizingMaskIntoConstraints="NO" id="RwJ-Mq-yt0">
                                 <rect key="frame" x="28" y="190" width="968" height="510"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main menu" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-Sb-6kA">
-                                <rect key="frame" x="28" y="715" width="125" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Prev" translatesAutoresizingMaskIntoConstraints="NO" id="JHR-Sb-6kA">
+                                <rect key="frame" x="28" y="715" width="50" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="fx0-r3-Vty"/>
                                 </constraints>
@@ -325,7 +325,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9y-91-fDW">
-                                <rect key="frame" x="28" y="715" width="125" height="33"/>
+                                <rect key="frame" x="28" y="715" width="50" height="33"/>
+                                <connections>
+                                    <action selector="prevBtnPressed:" destination="1ze-co-xLx" eventType="touchUpInside" id="CVv-a6-gQS"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZm-sT-4KZ">
                                 <rect key="frame" x="515" y="342.5" width="100" height="135"/>
@@ -451,8 +454,8 @@
         <image name="Clubs" width="650" height="650"/>
         <image name="East Hand" width="158" height="231"/>
         <image name="Hearts" width="650" height="650"/>
-        <image name="Main menu" width="125" height="21"/>
         <image name="Next" width="55" height="21"/>
+        <image name="Prev" width="50" height="21"/>
         <image name="Rectangle" width="185" height="43"/>
         <image name="Title graphic" width="1004" height="109"/>
         <image name="West Hand" width="160" height="231"/>
