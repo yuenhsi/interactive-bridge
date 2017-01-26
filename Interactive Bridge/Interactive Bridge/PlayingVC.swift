@@ -96,7 +96,8 @@ class PlayingVC: UIViewController {
         case 2:
             var deck = Deck()!
             deck.shuffle()
-            var hands = deck.deal()
+            // ensure each player has 2 of each suit
+            var hands = deck.deal(special: handReqs.TWO_EACH_SUIT)
             // by convention, playerHand is always the first item, followed by West, North, then East; player is always South.
             playerHand = hands[0]
             let playedRound = playRound(lead: .west, hands: &hands)

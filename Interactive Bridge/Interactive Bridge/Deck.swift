@@ -9,6 +9,10 @@
 import Foundation
 import GameplayKit
 
+enum handReqs {
+    case TWO_EACH_SUIT, ACE_EACH_SUIT
+}
+
 struct Deck {
     
     var cards = [Card]()
@@ -38,7 +42,7 @@ struct Deck {
         return cards[0]
     }
     
-    mutating func deal(players: Int = 4) -> [[Card]] {
+    mutating func deal(players: Int = 4, special: handReqs?) -> [[Card]] {
         // ensure that cards are divisible by playerCount
         if cards.count % 4 != 0 {
             return []
