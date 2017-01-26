@@ -60,14 +60,13 @@ class PlayingVC: UIViewController {
         
         super.viewDidLoad()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapOccurred))
-        view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapOccurred)))
     
         currentRule = 1
-        displayLesson()
+        startLessons()
     }
     
-    func displayLesson() {
+    func startLessons() {
         switch currentRule {
         case 1:
             for v in playerCardsStk.subviews {
@@ -79,7 +78,7 @@ class PlayingVC: UIViewController {
         case 2:
             var deck = Deck()!
             deck.shuffle()
-            var hands = deck.deal(players: 4)
+            var hands = deck.deal()
             // by convention, playerHand is always the first item, followed by West, North, then East; player is always South.
             playerHand = hands[0]
             let playedRound = playRound(lead: .west, hands: &hands)
@@ -109,7 +108,7 @@ class PlayingVC: UIViewController {
             if let tappedCard = touchedView as? CardImageView {
                 if (selectedCard == nil) {
                     selectedCard = tappedCard
-                    UIView.animate(withDuration: 0.3, animations: {
+                    UIView.animate(withDuration: 0.2, animations: {
                         self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: -20)
                     })
                 } else {
@@ -119,7 +118,7 @@ class PlayingVC: UIViewController {
                     } else {
                         self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
                         selectedCard = tappedCard
-                        UIView.animate(withDuration: 0.3, animations: {
+                        UIView.animate(withDuration: 0.2, animations: {
                             self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: -20)
                         })
                     }
