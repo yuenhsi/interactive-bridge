@@ -56,6 +56,14 @@ struct Deck {
                 hands[playerIndex].append(draw())
             }
         }
+        if special != nil {
+            switch(special!) {
+            case .TWO_EACH_SUIT:
+                return hands
+            case .ACE_EACH_SUIT:
+                return hands
+            }
+        }
         return hands
     }
 }

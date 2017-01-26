@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A02D8021E36B2BA00B59795 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02D8011E36B2BA00B59795 /* Deck.swift */; };
 		5A02D8061E36D78500B59795 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A02D8051E36D78500B59795 /* Helper.swift */; };
+		5A28535B1E3A83DB00C9730D /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A28535A1E3A83DB00C9730D /* Hand.swift */; };
 		5A5AA6301E354C72001BF382 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA62F1E354C72001BF382 /* BorderedLabel.swift */; };
 		5A5AA6321E354FA0001BF382 /* PlayingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA6311E354FA0001BF382 /* PlayingVC.swift */; };
 		5A5AA6341E3550A7001BF382 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5AA6331E3550A7001BF382 /* Constants.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		5A02D8011E36B2BA00B59795 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		5A02D8051E36D78500B59795 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		5A28535A1E3A83DB00C9730D /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		5A5AA62F1E354C72001BF382 /* BorderedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
 		5A5AA6311E354FA0001BF382 /* PlayingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingVC.swift; sourceTree = "<group>"; };
 		5A5AA6331E3550A7001BF382 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				5A02D8011E36B2BA00B59795 /* Deck.swift */,
 				5AE5E2591E37E10C00A15138 /* CardImageView.swift */,
 				5AE5E25B1E37EAFD00A15138 /* CardsStackView.swift */,
+				5A28535A1E3A83DB00C9730D /* Hand.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				5AB04C571E32941D0046C996 /* WelcomeVC.swift in Sources */,
 				5A5AA6301E354C72001BF382 /* BorderedLabel.swift in Sources */,
 				5AE5E25E1E37F26100A15138 /* SmartBridgePlayer.swift in Sources */,
+				5A28535B1E3A83DB00C9730D /* Hand.swift in Sources */,
 				5A5AA6361E358E40001BF382 /* Card.swift in Sources */,
 				5AB04C711E33361A0046C996 /* SelectionVC.swift in Sources */,
 				5A02D8021E36B2BA00B59795 /* Deck.swift in Sources */,
