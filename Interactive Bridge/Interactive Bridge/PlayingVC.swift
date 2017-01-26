@@ -56,6 +56,7 @@ class PlayingVC: UIViewController {
     }
     var respondingToTouches = false
     var selectedCard: CardImageView?
+    weak var timer: Timer?
 
     override func viewDidLoad() {
         
@@ -67,6 +68,19 @@ class PlayingVC: UIViewController {
         startLessons()
     }
     
+    func flashNextImg(currentRule: Int) {
+        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] _ in
+            if (self?.currentRule == 1) {
+                self?.nextImg.image = UIImage(named: "NextFlipped")
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+                    self?.nextImg.image = UIImage(named: "Next")
+                }
+            } else {
+                self?.timer?.invalidate()
+            }
+        }
+    }
+    
     func startLessons() {
         switch currentRule {
         case 1:
@@ -76,12 +90,7 @@ class PlayingVC: UIViewController {
                 }
             }
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
-                if (self.currentRule == 1) {
-                    self.nextImg.image = UIImage(named: "NextFlipped")
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
-                        self.nextImg.image = UIImage(named: "Next")
-                    }
-                }
+                self.flashNextImg(currentRule: 1)
             }
             
         case 2:
