@@ -84,9 +84,9 @@ class PlayingVC: UIViewController {
     func startLessons() {
         switch currentRule {
         case 1:
-            for v in playerCardsStk.subviews {
+            for (index, v) in playerCardsStk.subviews.enumerated() {
                 if let card = v as? CardImageView {
-                    card.setLabel(labelText: "\(card.tag)")
+                    card.setLabel(labelText: "\(index + 1)")
                 }
             }
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
