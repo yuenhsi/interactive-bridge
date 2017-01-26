@@ -42,18 +42,18 @@ struct Deck {
         return cards[0]
     }
     
-    mutating func deal(players: Int = 4, special: handReqs?) -> [[Card]] {
+    mutating func deal(players: Int = 4, special: handReqs?) -> [Hand] {
         // ensure that cards are divisible by playerCount
         if cards.count % 4 != 0 {
             return []
         }
-        var hands = [[Card]]()
+        var hands = [Hand]()
         for _ in 0..<players {
-            hands.append([Card]())
+            hands.append(Hand.init([Card]()))
         }
         while(cards.count > 0) {
             for playerIndex in 0..<players {
-                hands[playerIndex].append(draw())
+                hands[playerIndex].addCard(card: draw())
             }
         }
         if special != nil {

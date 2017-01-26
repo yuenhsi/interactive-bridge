@@ -28,4 +28,12 @@ class Hand {
     func cardsIn(suit: Suit) -> Int {
         return (cards.filter { $0.Suit ==  suit }).count
     }
+    
+    func addCard(card: Card) {
+        self.cards.append(card)
+    }
+    
+    func sort() {
+        self.cards.sort { sortCardsBySuit(first: $0, second: $1) }
+    }
 }

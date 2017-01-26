@@ -46,10 +46,10 @@ class PlayingVC: UIViewController {
             }
         }
     }
-    var playerHand: [Card]? {
+    var playerHand: Hand? {
         didSet {
             if (playerHand != nil) {
-                playerHand!.sort { sortCardsBySuit(first: $0, second: $1) }
+                playerHand!.sort()
             }
             playerCardsStk.refreshCards(playerHand!)
         }
