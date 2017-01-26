@@ -142,6 +142,7 @@ class PlayingVC: UIViewController {
             })
         } else {
             cardSouth.image = UIImage(named: getCardImageName(selectedCard!.card!))
+            playerCardsStk.removeCard(card: selectedCard!.card!)
             selectedCard = nil
         }
     }
