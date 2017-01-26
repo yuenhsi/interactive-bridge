@@ -23,6 +23,8 @@ class CardImageView: UIImageView {
     func setCard(_ card: Card?) {
         
         self.card = card
+        self.contentMode = .scaleAspectFit
+        self.isUserInteractionEnabled = true
         
     }
     

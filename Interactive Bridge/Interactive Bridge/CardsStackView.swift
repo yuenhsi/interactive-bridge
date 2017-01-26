@@ -16,17 +16,6 @@ class CardsStackView: UIStackView {
             for card in cards {
                 let cardImage = CardImageView()
                 cardImage.setCard(card)
-                cardImage.contentMode = .scaleAspectFit
-                cardImage.isUserInteractionEnabled = true
-                self.addArrangedSubview(cardImage)
-            }
-        } else {
-            for tag in 1...13 {
-                let cardImage = CardImageView()
-                cardImage.setCard(nil)
-                cardImage.contentMode = .scaleAspectFit
-                cardImage.tag = tag
-                cardImage.isUserInteractionEnabled = true
                 self.addArrangedSubview(cardImage)
             }
         }
@@ -34,10 +23,7 @@ class CardsStackView: UIStackView {
     
     func removeCard(card: Card) {
         let subviews = self.subviews.filter { ($0 as! CardImageView).card == card }
-        for subview in subviews {
-            subview.removeFromSuperview()
-        }
-        
+        subviews[0].removeFromSuperview()
     }
 
 }
