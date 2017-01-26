@@ -20,6 +20,7 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var cardWest: UIImageView!
     @IBOutlet weak var playerCardsStk: CardsStackView!
     @IBOutlet weak var warningLbl: UILabel!
+    @IBOutlet weak var nextImg: UIImageView!
     
     var currentRule: Int! {
         didSet {
@@ -72,6 +73,14 @@ class PlayingVC: UIViewController {
             for v in playerCardsStk.subviews {
                 if let card = v as? CardImageView {
                     card.setLabel(labelText: "\(card.tag)")
+                }
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
+                if (self.currentRule == 1) {
+                    self.nextImg.image = UIImage(named: "NextFlipped")
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+                        self.nextImg.image = UIImage(named: "Next")
+                    }
                 }
             }
             
@@ -185,6 +194,6 @@ class PlayingVC: UIViewController {
         } else {
             currentRule = currentRule! + 1
         }
-        displayLesson()
+        startLessons()
     }
 }

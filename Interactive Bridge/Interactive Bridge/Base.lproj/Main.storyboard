@@ -428,6 +428,7 @@
                         <outlet property="cardNorth" destination="CO8-7c-3hJ" id="DbT-XK-YpW"/>
                         <outlet property="cardSouth" destination="Fmo-f3-F7u" id="ofm-jG-9Yy"/>
                         <outlet property="cardWest" destination="YQq-gR-zQJ" id="nO7-hX-e4Z"/>
+                        <outlet property="nextImg" destination="5cl-hU-8vD" id="tux-3w-Sa1"/>
                         <outlet property="playerCardsStk" destination="5BF-xs-vzk" id="504-xG-DJl"/>
                         <outlet property="ruleLbl" destination="uP4-a0-a6h" id="V3C-Ah-L81"/>
                         <outlet property="selectedSuitImg" destination="rMe-C6-Rhg" id="kKD-1S-OY3"/>
