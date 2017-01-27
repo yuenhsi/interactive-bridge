@@ -36,4 +36,8 @@ class Hand {
     func sort() {
         self.cards.sort { sortCardsBySuit(first: $0, second: $1) }
     }
+    
+    func removeAll() {
+        self.cards.removeAll()
+    }
 }
