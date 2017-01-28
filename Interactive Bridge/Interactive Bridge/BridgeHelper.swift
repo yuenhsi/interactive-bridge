@@ -46,3 +46,19 @@ func playRound(lead: Position, hands: [Hand]) -> [(position: Int, card: Card)] {
 func finishRound() {
     
 }
+
+func getRoundWinner(round: [(position: Int, card: Card)], trump: Suit?) -> Int {
+    
+    var winner = round[0].position
+    var winnerCard = round[0].card
+    
+    for i in 1...3 {
+        if round[i].card > winnerCard {
+            winnerCard = round[i].card
+            winner = round[i].position
+        }
+    }
+    
+    
+    return winner
+}
