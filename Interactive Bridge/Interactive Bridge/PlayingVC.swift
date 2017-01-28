@@ -100,16 +100,8 @@ class PlayingVC: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
                 self.flashNextImg(currentRule: 1)
             }
-            
         case 2:
-            var deck = Deck()!
-            deck.shuffle()
-            // ensure each player has 2 of each suit
-            var hands = deck.deal(special: handReqs.TWO_EACH_SUIT)
-            // by convention, playerHand is always the first item, followed by West, North, then East; player is always South.
-            playerHand = hands[0]
-            let playedRound = playRound(lead: .west, hands: &hands)
-            animatePlayCards(round: playedRound, lead: .west)
+            startGame(special: .TWO_EACH_SUIT, lead: .west)
         case 3:
             return
         case 4:
@@ -133,7 +125,32 @@ class PlayingVC: UIViewController {
         hands = deck.deal(special: special)
         
         let playedRound = playRound(lead: lead, hands: hands)
-        animatePlayCards(round: playedRound, lead: .west)
+        playCards(round: playedRound)
+    }
+    
+    func playCards(round: [(position: Int, card: Card)]) {
+        if round.count >= 1 {
+            selectedSuit = round[0].card.Suit
+        }
+        for (index, play) in round.enumerated() {
+            var cardImageView: UIImageView!
+            switch play.position {
+            case 1:
+                cardImageView = self.cardWest
+            case 2:
+                cardImageView = self.cardNorth
+            case 3:
+                cardImageView = self.cardEast
+            case 4:
+                cardImageView = self.cardSouth
+            default:
+                print("Error: default case reached in playCards")
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(index * 500)) { [index] in
+                cardImageView.image = UIImage(named: getCardImageName(play.card))
+                cardImageView.layer.zPosition = CGFloat(index + 1)
+            }
+        }
     }
     
     func tapOccurred(sender: UIGestureRecognizer) {
@@ -160,7 +177,6 @@ class PlayingVC: UIViewController {
                 }
             }
         }
-        
     }
     
     func playSelectedCard() {
@@ -179,44 +195,6 @@ class PlayingVC: UIViewController {
             playerCardsStk.removeCard(card: selectedCard!.card!)
             selectedCard = nil
             respondingToTouches = false
-        }
-    }
-    
-    func animatePlayCards(round: [Card], lead: Position) {
-        if (lead == .south) {
-            return
-        }
-        selectedSuit = round[0].Suit
-        var roundOver = false
-        var currentTurn = lead
-        var currentIndex = 0
-        while !roundOver {
-            switch(currentTurn) {
-            case .west:
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(currentIndex * 500)) { [currentIndex] in
-                    self.cardWest.image = UIImage(named: getCardImageName(round[currentIndex]))
-                    self.cardWest.layer.zPosition = 1
-                }
-                currentIndex += 1
-                currentTurn = .north
-            case .north:
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(currentIndex * 500)) { [currentIndex] in
-                    self.cardNorth.image = UIImage(named: getCardImageName(round[currentIndex]))
-                    self.cardNorth.layer.zPosition = 2
-                }
-                currentIndex += 1
-                currentTurn = .east
-            case .east:
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(currentIndex * 500)) { [currentIndex] in
-                    self.cardEast.image = UIImage(named: getCardImageName(round[currentIndex]))
-                    self.cardEast.layer.zPosition = 3
-                    self.respondingToTouches = true
-                }
-                roundOver = true
-            case .south:
-                print("something went wrong.")
-                return
-            }
         }
     }
 
