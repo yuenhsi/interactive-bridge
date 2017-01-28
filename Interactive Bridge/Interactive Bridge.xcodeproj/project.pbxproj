@@ -22,7 +22,7 @@
 		5AB04C711E33361A0046C996 /* SelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB04C701E33361A0046C996 /* SelectionVC.swift */; };
 		5AE5E25A1E37E10C00A15138 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE5E2591E37E10C00A15138 /* CardImageView.swift */; };
 		5AE5E25C1E37EAFD00A15138 /* CardsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE5E25B1E37EAFD00A15138 /* CardsStackView.swift */; };
-		5AE5E25E1E37F26100A15138 /* SmartBridgePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE5E25D1E37F26100A15138 /* SmartBridgePlayer.swift */; };
+		5AE5E25E1E37F26100A15138 /* BridgeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE5E25D1E37F26100A15138 /* BridgeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,7 @@
 		5AB04C701E33361A0046C996 /* SelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionVC.swift; sourceTree = "<group>"; };
 		5AE5E2591E37E10C00A15138 /* CardImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 		5AE5E25B1E37EAFD00A15138 /* CardsStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsStackView.swift; sourceTree = "<group>"; };
-		5AE5E25D1E37F26100A15138 /* SmartBridgePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartBridgePlayer.swift; sourceTree = "<group>"; };
+		5AE5E25D1E37F26100A15138 /* BridgeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 				5A5AA6311E354FA0001BF382 /* PlayingVC.swift */,
 				5AB04C541E32941D0046C996 /* AppDelegate.swift */,
 				5A02D8051E36D78500B59795 /* Helper.swift */,
-				5AE5E25D1E37F26100A15138 /* SmartBridgePlayer.swift */,
+				5AE5E25D1E37F26100A15138 /* BridgeHelper.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 				5AE5E25A1E37E10C00A15138 /* CardImageView.swift in Sources */,
 				5AB04C571E32941D0046C996 /* WelcomeVC.swift in Sources */,
 				5A5AA6301E354C72001BF382 /* BorderedLabel.swift in Sources */,
-				5AE5E25E1E37F26100A15138 /* SmartBridgePlayer.swift in Sources */,
+				5AE5E25E1E37F26100A15138 /* BridgeHelper.swift in Sources */,
 				5A28535B1E3A83DB00C9730D /* Hand.swift in Sources */,
 				5A5AA6361E358E40001BF382 /* Card.swift in Sources */,
 				5AB04C711E33361A0046C996 /* SelectionVC.swift in Sources */,
