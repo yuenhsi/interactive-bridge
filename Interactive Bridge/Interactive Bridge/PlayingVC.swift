@@ -121,7 +121,6 @@ class PlayingVC: UIViewController {
     
     func startGame(special: handReqs?, lead: Position) {
         var deck = Deck()!
-        deck.shuffle()
         hands = deck.deal(special: special)
         
         let playedRound = playRound(lead: lead, hands: hands)
