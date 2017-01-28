@@ -132,7 +132,7 @@ class PlayingVC: UIViewController {
         deck.shuffle()
         hands = deck.deal(special: special)
         
-        let playedRound = playRound(lead: lead, hands: &hands)
+        let playedRound = playRound(lead: lead, hands: hands)
         animatePlayCards(round: playedRound, lead: .west)
     }
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-func playRound(lead: Position, hands: inout [Hand]) -> [Card] {
+func playRound(lead: Position, hands: [Hand]) -> [Card] {
     var playedCards = [Card]()
     var startingPosition: Int!
     switch lead {
@@ -26,15 +26,15 @@ func playRound(lead: Position, hands: inout [Hand]) -> [Card] {
         // check whether this player is leading
         var card: Card
         if player == startingPosition {
-            card = hands[player].cards.remove(at: 0)
+            card = hands[player].cards[0]
             selectedSuit = card.Suit
         } else {
             // just play a random card of correct suit, or a random card for now
             if let i = hands[player].cards.index(where: { $0.Suit == selectedSuit }) {
-                card = hands[player].cards.remove(at: i)
+                card = hands[player].cards[i]
             } else {
                 // not very intelligent for now...
-                card = hands[player].cards.remove(at: 0)
+                card = hands[player].cards[0]
             }
         }
         playedCards.append(card)
