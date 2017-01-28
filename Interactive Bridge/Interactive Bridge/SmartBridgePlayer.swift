@@ -8,8 +8,9 @@
 
 import Foundation
 
-func playRound(lead: Position, hands: inout [Hand]) -> [Card] {
-    var playedCards = [Card]()
+func playRound(lead: Position, hands: [Hand]) -> [(position: Int, card: Card)] {
+    var plays = [(Int, Card)]()
+    var selectedSuit: Suit!
     var startingPosition: Int!
     switch lead {
     case .west:
@@ -19,30 +20,26 @@ func playRound(lead: Position, hands: inout [Hand]) -> [Card] {
     case .east:
         startingPosition = 3
     case .south:
-        return playedCards
+        return plays
     }
-    var selectedSuit: Suit!
-    for player in startingPosition ... 4 - startingPosition {
+    for playerIndex in startingPosition ... 4 - startingPosition {
         // check whether this player is leading
         var card: Card
-        if player == startingPosition {
-            card = hands[player].cards.remove(at: 0)
+        if playerIndex == startingPosition {
+            card = hands[playerIndex].cards[0]
             selectedSuit = card.Suit
         } else {
             // just play a random card of correct suit, or a random card for now
-            if let i = hands[player].cards.index(where: { $0.Suit == selectedSuit }) {
-                card = hands[player].cards.remove(at: i)
+            if let i = hands[playerIndex].cards.index(where: { $0.Suit == selectedSuit }) {
+                card = hands[playerIndex].cards[i]
             } else {
                 // not very intelligent for now...
-                card = hands[player].cards.remove(at: 0)
+                card = hands[playerIndex].cards[0]
             }
         }
-        playedCards.append(card)
+        plays.append((playerIndex, card))
     }
-    
-    
-    
-    return playedCards
+    return plays
 }
 
 // stub, for continuation after player plays his card
