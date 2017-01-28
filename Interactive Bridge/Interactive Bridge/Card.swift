@@ -11,6 +11,10 @@ import Foundation
 enum Rank: String {
     case two = "2", three = "3", four = "4", five = "5", six = "6", seven = "7", eight = "8", nine = "9", ten = "10", jack = "J", queen = "Q", king = "K", ace = "A"
     static let allValues = [two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace]
+    
+    public static func >(lhs: Rank, rhs: Rank) -> Bool {
+        return allValues.index(of: lhs)! > allValues.index(of: rhs)!
+    }
 }
 
 enum Suit: String {

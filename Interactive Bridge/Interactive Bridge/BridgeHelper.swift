@@ -53,12 +53,17 @@ func getRoundWinner(round: [(position: Int, card: Card)], trump: Suit?) -> Int {
     var winnerCard = round[0].card
     
     for i in 1...3 {
-        if round[i].card > winnerCard {
-            winnerCard = round[i].card
-            winner = round[i].position
+        if round[i].card.Suit == winnerCard.Suit {
+            if round[i].card.Rank > winnerCard.Rank {
+                winnerCard = round[i].card
+                winner = round[i].position
+            }
+        } else {
+            if round[i].card.Suit == trump {
+                winnerCard = round[i].card
+                winner = round[i].position
+            }
         }
     }
-    
-    
     return winner
 }
