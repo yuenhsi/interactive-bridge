@@ -39,9 +39,6 @@ func playRound(lead: Position, hands: inout [Hand]) -> [Card] {
         }
         playedCards.append(card)
     }
-    
-    
-    
     return playedCards
 }
 

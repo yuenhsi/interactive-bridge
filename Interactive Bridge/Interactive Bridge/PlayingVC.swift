@@ -46,7 +46,15 @@ class PlayingVC: UIViewController {
             }
         }
     }
-    var playerHand: Hand? {
+    var hands: [Hand]! {
+        didSet {
+            // by convention, playerHand is always the first item, followed by West, North, then East; player is always South.
+            if hands.count > 0  {
+                playerHand = hands[0]
+            }
+        }
+    }
+    var playerHand: Hand! {
         didSet {
             if (playerHand != nil) {
                 playerHand!.sort()
@@ -117,6 +125,15 @@ class PlayingVC: UIViewController {
         // rule 3: let player trump (trump, selected)
         // rule 4: let player trump (trump, selected)
         // rule 5: play (trump, selected)
+    }
+    
+    func startGame(special: handReqs?, lead: Position) {
+        var deck = Deck()!
+        deck.shuffle()
+        hands = deck.deal(special: special)
+        
+        let playedRound = playRound(lead: lead, hands: &hands)
+        animatePlayCards(round: playedRound, lead: .west)
     }
     
     func tapOccurred(sender: UIGestureRecognizer) {
