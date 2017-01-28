@@ -62,6 +62,7 @@ class PlayingVC: UIViewController {
             playerCardsStk.refreshCards(playerHand!)
         }
     }
+    var round: [(position: Int, card: Card)]!
     var respondingToTouches = false
     var selectedCard: CardImageView?
     weak var timer: Timer?
@@ -123,8 +124,8 @@ class PlayingVC: UIViewController {
         var deck = Deck()!
         hands = deck.deal(special: special)
         
-        let playedRound = playRound(lead: lead, hands: hands)
-        playCards(round: playedRound)
+        round = playRound(lead: lead, hands: hands)
+        playCards(round: round)
     }
     
     func playCards(round: [(position: Int, card: Card)]) {
@@ -196,6 +197,10 @@ class PlayingVC: UIViewController {
             selectedCard = nil
             respondingToTouches = false
             
+            if round.count != 4 {
+//                round = finishRound(round: round)
+            }
+            // 
             // call playeRound, playCards
 //            let playedRound = playRound(lead: lead, hands: hands)
 //            playCards(round: playedRound)
