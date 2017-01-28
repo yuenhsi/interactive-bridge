@@ -150,6 +150,7 @@ class PlayingVC: UIViewController {
                 cardImageView.layer.zPosition = CGFloat(index + 1)
             }
         }
+        respondingToTouches = true
     }
     
     func tapOccurred(sender: UIGestureRecognizer) {
@@ -194,6 +195,10 @@ class PlayingVC: UIViewController {
             playerCardsStk.removeCard(card: selectedCard!.card!)
             selectedCard = nil
             respondingToTouches = false
+            
+            // call playeRound, playCards
+//            let playedRound = playRound(lead: lead, hands: hands)
+//            playCards(round: playedRound)
         }
     }
 
