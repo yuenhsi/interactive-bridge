@@ -48,6 +48,7 @@ func finishRound(round: [(position: Int, card: Card)], hands: [Hand]) -> [(posit
         print("finishRound called with empty round passed in")
         return round
     }
+    var completedRound = round
     let playsLeft = 4 - round.count
     let selectedSuit = round[0].card.Suit
     
@@ -59,8 +60,9 @@ func finishRound(round: [(position: Int, card: Card)], hands: [Hand]) -> [(posit
         } else {
             card = hands[position].cards[0]
         }
-        round.append((position, card))
+        completedRound.append((position, card))
     }
+    return completedRound
 }
 
 

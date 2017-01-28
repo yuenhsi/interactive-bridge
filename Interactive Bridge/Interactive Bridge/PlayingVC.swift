@@ -64,6 +64,7 @@ class PlayingVC: UIViewController {
     }
     var round: [(position: Int, card: Card)]!
     var respondingToTouches = false
+    var cardThreshold: Int?
     var selectedCard: CardImageView?
     weak var timer: Timer?
 
@@ -102,6 +103,7 @@ class PlayingVC: UIViewController {
                 self.flashNextImg(currentRule: 1)
             }
         case 2:
+            cardThreshold = 11
             startGame(special: .TWO_EACH_SUIT, lead: .west)
         case 3:
             return
@@ -198,12 +200,52 @@ class PlayingVC: UIViewController {
             respondingToTouches = false
             
             if round.count != 4 {
-//                round = finishRound(round: round)
+                round = finishRound(round: round, hands: hands)
             }
-            // 
-            // call playeRound, playCards
-//            let playedRound = playRound(lead: lead, hands: hands)
-//            playCards(round: playedRound)
+            let winner = getRoundWinner(round: round, trump: trumpSuit)
+            showWinner(winner: winner)
+
+            if cardThreshold != nil {
+                if playerHand.cards.count > cardThreshold! {
+                    flashNextImg(currentRule: 2)
+                }
+            } else {
+                if playerHand.cards.count > 0 {
+                    round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
+                    playCards(round: round)
+                }
+            }
+        }
+    }
+    
+    func showWinner(winner: Int) {
+        // implement an animation of some sort to indicate winner
+    }
+    
+    func getPositionFromNumber(number: Int, playerPosition: Position) -> Position {
+        var position = number
+        switch (playerPosition) {
+        case .west:
+            position += 1
+        case .north:
+            position += 2
+        case .east:
+            position += 3
+        default:
+            break
+        }
+        switch (position % 4) {
+        case 0:
+            return Position.south
+        case 1:
+            return Position.west
+        case 2:
+            return Position.north
+        case 3:
+            return Position.east
+        default:
+            print("something wrong happened... switch on mod 4 not returning 0-3")
+            return Position.west
         }
     }
 
