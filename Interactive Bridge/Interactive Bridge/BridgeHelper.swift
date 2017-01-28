@@ -9,7 +9,7 @@
 import Foundation
 
 func playRound(lead: Position, hands: [Hand]) -> [(position: Int, card: Card)] {
-    var plays = [(Int, Card)]()
+    var round = [(Int, Card)]()
     var selectedSuit: Suit!
     var startingPosition: Int!
     switch lead {
@@ -20,7 +20,7 @@ func playRound(lead: Position, hands: [Hand]) -> [(position: Int, card: Card)] {
     case .east:
         startingPosition = 3
     case .south:
-        return plays
+        return round
     }
     for playerIndex in startingPosition ... 4 - startingPosition {
         // check whether this player is leading
@@ -37,15 +37,32 @@ func playRound(lead: Position, hands: [Hand]) -> [(position: Int, card: Card)] {
                 card = hands[playerIndex].cards[0]
             }
         }
-        plays.append((playerIndex, card))
+        round.append((playerIndex, card))
     }
-    return plays
+    return round
 }
 
-// stub, for continuation after player plays his card
-func finishRound() {
+
+func finishRound(round: [(position: Int, card: Card)], hands: [Hand]) -> [(position: Int, card: Card)] {
+    guard round.count >= 1 else {
+        print("finishRound called with empty round passed in")
+        return round
+    }
+    let playsLeft = 4 - round.count
+    let selectedSuit = round[0].card.Suit
     
+    // finishRound always starts from position 1, where west hand is
+    for position in 1...playsLeft {
+        var card: Card
+        if let i = hands[position].cards.index(where: { $0.Suit == selectedSuit }) {
+            card = hands[position].cards[i]
+        } else {
+            card = hands[position].cards[0]
+        }
+        round.append((position, card))
+    }
 }
+
 
 func getRoundWinner(round: [(position: Int, card: Card)], trump: Suit?) -> Int {
     
