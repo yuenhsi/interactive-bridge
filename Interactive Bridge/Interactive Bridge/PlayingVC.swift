@@ -187,7 +187,6 @@ class PlayingVC: UIViewController {
         if (selectedCard?.card!.Suit != selectedSuit) {
             selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
             selectedCard = nil
-            
             warningLbl.text = "Please follow suit!"
             warningLbl.alpha = 1
             
@@ -196,6 +195,8 @@ class PlayingVC: UIViewController {
             })
         } else {
             cardSouth.image = UIImage(named: getCardImageName(selectedCard!.card!))
+            cardSouth.layer.zPosition = 4
+            
             playerCardsStk.removeCard(card: selectedCard!.card!)
             selectedCard = nil
             respondingToTouches = false
