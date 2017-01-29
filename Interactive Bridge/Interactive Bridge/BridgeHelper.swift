@@ -22,7 +22,7 @@ func playRound(lead: Position, hands: [Hand]) -> [(position: Int, card: Card)] {
     case .south:
         return round
     }
-    for playerIndex in startingPosition ... 4 - startingPosition {
+    for playerIndex in startingPosition ... 3 {
         // check whether this player is leading
         var card: Card
         if playerIndex == startingPosition {
