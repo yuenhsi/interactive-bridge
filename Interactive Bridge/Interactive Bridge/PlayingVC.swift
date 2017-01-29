@@ -87,6 +87,7 @@ class PlayingVC: UIViewController {
                 }
             } else {
                 self?.timer?.invalidate()
+                return
             }
         }
     }
