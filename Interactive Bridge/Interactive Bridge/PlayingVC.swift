@@ -49,17 +49,18 @@ class PlayingVC: UIViewController {
     var hands: [Hand]! {
         didSet {
             // by convention, playerHand is always the first item, followed by West, North, then East; player is always South.
-            if hands.count > 0  {
-                playerHand = hands[0]
-            }
+            hands[0].sort()
+            playerCardsStk.refreshCards(hands[0])
         }
     }
     var playerHand: Hand! {
-        didSet {
-            if (playerHand != nil) {
-                playerHand!.sort()
-            }
-            playerCardsStk.refreshCards(playerHand!)
+        get {
+            return hands[0]
+        }
+        set {
+            hands[0] = newValue
+//            hands[0].sort()
+//            playerCardsStk.refreshCards(playerHand!)
         }
     }
     var round: [(position: Int, card: Card)]!
