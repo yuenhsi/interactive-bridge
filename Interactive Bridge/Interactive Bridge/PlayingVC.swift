@@ -225,6 +225,11 @@ class PlayingVC: UIViewController {
     
     func showWinner(winner: Int) {
         // implement an animation of some sort to indicate winner
+        
+        cardNorth.image = nil
+        cardSouth.image = nil
+        cardEast.image = nil
+        cardWest.image = nil
     }
     
     func getPositionFromNumber(number: Int, playerPosition: Position) -> Position {
