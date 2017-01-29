@@ -80,7 +80,7 @@ class PlayingVC: UIViewController {
     
     func flashNextImg(currentRule: Int) {
         timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] _ in
-            if (self?.currentRule == 1) {
+            if (self?.currentRule == currentRule) {
                 self?.nextImg.image = UIImage(named: "NextFlipped")
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
                     self?.nextImg.image = UIImage(named: "Next")
@@ -208,7 +208,7 @@ class PlayingVC: UIViewController {
 
             if cardThreshold != nil {
                 if playerHand.cards.count > cardThreshold! {
-                    flashNextImg(currentRule: 2)
+                    flashNextImg(currentRule: currentRule)
                 }
             } else {
                 if playerHand.cards.count > 0 {
