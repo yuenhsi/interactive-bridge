@@ -143,9 +143,11 @@ class PlayingVC: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(index * 500)) { [index] in
                 cardImageView.image = UIImage(named: getCardImageName(play.card))
                 cardImageView.layer.zPosition = CGFloat(index + 1)
+                if cardImageView == self.cardEast {
+                    self.respondingToTouches = true
+                }
             }
         }
-        respondingToTouches = true
     }
     
     func tapOccurred(sender: UIGestureRecognizer) {
