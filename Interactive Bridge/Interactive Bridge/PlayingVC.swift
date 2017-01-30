@@ -209,12 +209,7 @@ class PlayingVC: UIViewController {
     }
     
     func showWinner(winner: Int) {
-        // implement an animation of some sort to indicate winner
         
-        cardOne.image = nil
-        cardTwo.image = nil
-        cardThree.image = nil
-        cardFour.image = nil
     func getWinnerCard(_ winner: Int) -> UIImageView {
         if winner == 1 {
             return self.cardOne
