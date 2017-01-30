@@ -33,6 +33,10 @@ class Hand {
         self.cards.append(card)
     }
     
+    func removeCard(card: Card) {
+        self.cards = self.cards.filter() { $0 != card }
+    }
+    
     func sort() {
         self.cards.sort { sortCardsBySuit(first: $0, second: $1) }
     }

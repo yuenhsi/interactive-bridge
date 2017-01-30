@@ -46,21 +46,10 @@ class PlayingVC: UIViewController {
             }
         }
     }
-    var hands: [Hand]! {
-        didSet {
-            // by convention, playerHand is always the first item, followed by West, North, then East; player is always South.
-            hands[0].sort()
-            playerCardsStk.refreshCards(hands[0])
-        }
-    }
+    var hands: [Hand]!
     var playerHand: Hand! {
         get {
             return hands[0]
-        }
-        set {
-            hands[0] = newValue
-//            hands[0].sort()
-//            playerCardsStk.refreshCards(playerHand!)
         }
     }
     var round: [(position: Int, card: Card)]!
@@ -127,6 +116,7 @@ class PlayingVC: UIViewController {
     func startGame(special: handReqs?, lead: Position) {
         var deck = Deck()!
         hands = deck.deal(special: special)
+        updatePlayerCards()
         
         round = playRound(lead: lead, hands: hands)
         playCards(round: round)
@@ -198,9 +188,12 @@ class PlayingVC: UIViewController {
             cardSouth.image = UIImage(named: getCardImageName(selectedCard!.card!))
             cardSouth.layer.zPosition = 4
             
-            playerCardsStk.removeCard(card: selectedCard!.card!)
+            playerHand.removeCard(card: selectedCard!.card!)
+            round.append((position: 4, card: selectedCard!.card!))
+            
             selectedCard = nil
             respondingToTouches = false
+            updatePlayerCards()
             
             if round.count != 4 {
                 round = finishRound(round: round, hands: hands)
@@ -231,6 +224,11 @@ class PlayingVC: UIViewController {
         cardSouth.image = nil
         cardEast.image = nil
         cardWest.image = nil
+    }
+    
+    func updatePlayerCards() {
+        hands[0].sort()
+        playerCardsStk.refreshCards(hands[0])
     }
     
     func getPositionFromNumber(number: Int, playerPosition: Position) -> Position {
