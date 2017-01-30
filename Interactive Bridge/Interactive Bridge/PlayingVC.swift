@@ -175,8 +175,10 @@ class PlayingVC: UIViewController {
                             updatePlayerCards()
                             if round.count != 4 {
                                 round = finishRound(round: round, hands: hands)
+                                playCards(round: round)
                             }
                             let winner = getRoundWinner(round: round, trump: trumpSuit)
+                            round = nil
                             showWinner(winner: winner)
                         }
                     }
@@ -201,7 +203,7 @@ class PlayingVC: UIViewController {
             }
         }
         if playerHand.cards.count > 0 {
-            round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
+            round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .south), hands: hands)
             playCards(round: round)
         }
     }
