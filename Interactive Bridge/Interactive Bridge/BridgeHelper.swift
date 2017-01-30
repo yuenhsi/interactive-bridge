@@ -86,3 +86,31 @@ func getRoundWinner(round: [(position: Int, card: Card)], trump: Suit?) -> Int {
     }
     return winner
 }
+
+
+func getPositionFromNumber(number: Int, playerPosition: Position) -> Position {
+    var position = number
+    switch (playerPosition) {
+    case .west:
+        position += 1
+    case .north:
+        position += 2
+    case .east:
+        position += 3
+    default:
+        break
+    }
+    switch (position % 4) {
+    case 0:
+        return Position.south
+    case 1:
+        return Position.west
+    case 2:
+        return Position.north
+    case 3:
+        return Position.east
+    default:
+        print("something wrong happened... switch on mod 4 not returning 0-3")
+        return Position.west
+    }
+}

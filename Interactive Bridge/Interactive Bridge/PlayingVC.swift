@@ -68,19 +68,6 @@ class PlayingVC: UIViewController {
         startLessons()
     }
     
-    func flashNextImg(currentRule: Int) {
-        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] _ in
-            if (self?.currentRule == currentRule) {
-                self?.nextImg.image = UIImage(named: "NextFlipped")
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
-                    self?.nextImg.image = UIImage(named: "Next")
-                }
-            } else {
-                self?.timer?.invalidate()
-                return
-            }
-        }
-    }
     
     func startLessons() {
         switch currentRule {
@@ -230,30 +217,19 @@ class PlayingVC: UIViewController {
         playerCardsStk.refreshCards(hands[0])
     }
     
-    func getPositionFromNumber(number: Int, playerPosition: Position) -> Position {
-        var position = number
-        switch (playerPosition) {
-        case .west:
-            position += 1
-        case .north:
-            position += 2
-        case .east:
-            position += 3
-        default:
-            break
-        }
-        switch (position % 4) {
-        case 0:
-            return Position.south
-        case 1:
-            return Position.west
-        case 2:
-            return Position.north
-        case 3:
-            return Position.east
-        default:
-            print("something wrong happened... switch on mod 4 not returning 0-3")
-            return Position.west
+    
+    
+    func flashNextImg(currentRule: Int) {
+        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] _ in
+            if (self?.currentRule == currentRule) {
+                self?.nextImg.image = UIImage(named: "NextFlipped")
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+                    self?.nextImg.image = UIImage(named: "Next")
+                }
+            } else {
+                self?.timer?.invalidate()
+                return
+            }
         }
     }
 
