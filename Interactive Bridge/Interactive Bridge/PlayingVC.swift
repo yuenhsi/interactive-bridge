@@ -112,7 +112,7 @@ class PlayingVC: UIViewController {
     }
     
     
-    func playCards(round: [(position: Int, card: Card)]) {
+    func playCards(round: [(position: Int, card: Card)], completed: (() -> ())? = nil) {
         if round.count >= 1 {
             selectedSuit = round[0].card.Suit
         }
@@ -136,11 +136,16 @@ class PlayingVC: UIViewController {
                     delay = (index - startingIndex) * 500
                     zIndex = index + 4
                 }
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)) { [zIndex] in
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)) { [zIndex, index] in
                     cardImageView.image = UIImage(named: getCardImageName(play.card))
                     cardImageView.layer.zPosition = CGFloat(zIndex)
                     if cardImageView == self.cardThree {
                         self.respondingToTouches = true
+                    }
+                    if index == 3 {
+                        if completed != nil {
+                            completed!()
+                        }
                     }
                 }
             }
@@ -182,11 +187,16 @@ class PlayingVC: UIViewController {
                             updatePlayerCards()
                             if round.count != 4 {
                                 round = finishRound(round: round, hands: hands)
-                                playCards(round: round)
+                                playCards(round: round, completed: {
+                                    let winner = getRoundWinner(round: self.round, trump: self.trumpSuit)
+                                    self.round = nil
+                                    self.showWinner(winner: winner)
+                                })
+                            } else {
+                                let winner = getRoundWinner(round: round, trump: trumpSuit)
+                                round = nil
+                                showWinner(winner: winner)
                             }
-                            let winner = getRoundWinner(round: round, trump: trumpSuit)
-                            round = nil
-                            showWinner(winner: winner)
                         }
                     }
                 }
