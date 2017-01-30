@@ -215,6 +215,19 @@ class PlayingVC: UIViewController {
         cardTwo.image = nil
         cardThree.image = nil
         cardFour.image = nil
+    func getWinnerCard(_ winner: Int) -> UIImageView {
+        if winner == 1 {
+            return self.cardOne
+        }
+        if winner == 2 {
+            return self.cardTwo
+        }
+        if winner == 3 {
+            return self.cardThree
+        }
+        if winner == 4 {
+            return self.cardFour
+        }
     }
     
     func updatePlayerCards() {
