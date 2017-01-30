@@ -161,62 +161,59 @@ class PlayingVC: UIViewController {
                         self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: -20)
                     })
                 } else {
-                    if selectedCard!.card == tappedCard.card! {
-                        playSelectedCard()
-                        selectedCard = nil
-                    } else {
+                    if selectedCard!.card != tappedCard.card! {
                         self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
                         selectedCard = tappedCard
                         UIView.animate(withDuration: 0.2, animations: {
                             self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: -20)
                         })
+                    } else {
+                        if (selectedCard?.card!.Suit != selectedSuit) {
+                            selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
+                            selectedCard = nil
+                            warningLbl.text = "Please follow suit!"
+                            warningLbl.alpha = 1
+                            
+                            UIView.animate(withDuration: 1, animations: {
+                                self.warningLbl.alpha = 0
+                            })
+                        } else {
+                            playCard(card: selectedCard!.card!)
+                            selectedCard = nil
+                            respondingToTouches = false
+                            updatePlayerCards()
+                            if round.count != 4 {
+                                round = finishRound(round: round, hands: hands)
+                            }
+                            let winner = getRoundWinner(round: round, trump: trumpSuit)
+                            showWinner(winner: winner)
+                            
+                            if cardThreshold != nil {
+                                if playerHand.cards.count < cardThreshold! {
+                                    flashNextImg(currentRule: currentRule)
+                                } else {
+                                    round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
+                                    playCards(round: round)
+                                }
+                            } else {
+                                if playerHand.cards.count > 0 {
+                                    round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
+                                    playCards(round: round)
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     }
     
-    func playSelectedCard() {
-        if (selectedCard?.card!.Suit != selectedSuit) {
-            selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
-            selectedCard = nil
-            warningLbl.text = "Please follow suit!"
-            warningLbl.alpha = 1
-            
-            UIView.animate(withDuration: 1, animations: {
-                self.warningLbl.alpha = 0
-            })
-        } else {
-            cardFour.image = UIImage(named: getCardImageName(selectedCard!.card!))
-            cardFour.layer.zPosition = 4
-            
-            playerHand.removeCard(card: selectedCard!.card!)
-            round.append((position: 4, card: selectedCard!.card!))
-            
-            selectedCard = nil
-            respondingToTouches = false
-            updatePlayerCards()
-            
-            if round.count != 4 {
-                round = finishRound(round: round, hands: hands)
-            }
-            let winner = getRoundWinner(round: round, trump: trumpSuit)
-            showWinner(winner: winner)
-
-            if cardThreshold != nil {
-                if playerHand.cards.count < cardThreshold! {
-                    flashNextImg(currentRule: currentRule)
-                } else {
-                    round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
-                    playCards(round: round)
-                }
-            } else {
-                if playerHand.cards.count > 0 {
-                    round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
-                    playCards(round: round)
-                }
-            }
-        }
+    func playCard(card: Card) {
+        cardFour.image = UIImage(named: getCardImageName(card))
+        cardFour.layer.zPosition = 4
+        
+        playerHand.removeCard(card: card)
+        round.append((position: 4, card: card))
     }
     
     func showWinner(winner: Int) {
