@@ -198,15 +198,11 @@ class PlayingVC: UIViewController {
         if cardThreshold != nil {
             if playerHand.cards.count < cardThreshold! {
                 flashNextImg(currentRule: currentRule)
-            } else {
-                round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
-                playCards(round: round)
             }
-        } else {
-            if playerHand.cards.count > 0 {
-                round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
-                playCards(round: round)
-            }
+        }
+        if playerHand.cards.count > 0 {
+            round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
+            playCards(round: round)
         }
     }
     
