@@ -178,20 +178,6 @@ class PlayingVC: UIViewController {
                             }
                             let winner = getRoundWinner(round: round, trump: trumpSuit)
                             showWinner(winner: winner)
-                            
-                            if cardThreshold != nil {
-                                if playerHand.cards.count < cardThreshold! {
-                                    flashNextImg(currentRule: currentRule)
-                                } else {
-                                    round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
-                                    playCards(round: round)
-                                }
-                            } else {
-                                if playerHand.cards.count > 0 {
-                                    round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
-                                    playCards(round: round)
-                                }
-                            }
                         }
                     }
                 }
@@ -208,8 +194,39 @@ class PlayingVC: UIViewController {
         round.append((position: 4, card: card))
     }
     
+    func continueGame(winner: Int) {
+        if cardThreshold != nil {
+            if playerHand.cards.count < cardThreshold! {
+                flashNextImg(currentRule: currentRule)
+            } else {
+                round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
+                playCards(round: round)
+            }
+        } else {
+            if playerHand.cards.count > 0 {
+                round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .west), hands: hands)
+                playCards(round: round)
+            }
+        }
+    }
+    
     func showWinner(winner: Int) {
+        let winnerCard = getWinnerCard(winner)
         
+        winnerCard.layer.borderColor = UIColor.red.cgColor
+        winnerCard.layer.borderWidth = 2
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) { [winnerCard, winner] in
+            winnerCard.layer.borderWidth = 0
+            self.cardOne.image = nil
+            self.cardTwo.image = nil
+            self.cardThree.image = nil
+            self.cardFour.image = nil
+            
+            self.continueGame(winner: winner)
+        }
+    }
+    
     func getWinnerCard(_ winner: Int) -> UIImageView {
         if winner == 1 {
             return self.cardOne
@@ -223,6 +240,8 @@ class PlayingVC: UIViewController {
         if winner == 4 {
             return self.cardFour
         }
+        print("winner not between range of 1 to 4")
+        return UIImageView()
     }
     
     func updatePlayerCards() {
