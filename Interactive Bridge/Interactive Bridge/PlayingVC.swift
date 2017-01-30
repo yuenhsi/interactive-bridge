@@ -58,6 +58,7 @@ class PlayingVC: UIViewController {
     var selectedCard: CardImageView?
     weak var timer: Timer?
 
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -66,6 +67,16 @@ class PlayingVC: UIViewController {
     
         currentRule = 1
         startLessons()
+    }
+    
+    
+    func startGame(special: handReqs?, lead: Position) {
+        var deck = Deck()!
+        hands = deck.deal(special: special)
+        updatePlayerCards()
+        
+        round = playRound(lead: lead, hands: hands)
+        playCards(round: round)
     }
     
     
@@ -100,14 +111,6 @@ class PlayingVC: UIViewController {
         // rule 5: play (trump, selected)
     }
     
-    func startGame(special: handReqs?, lead: Position) {
-        var deck = Deck()!
-        hands = deck.deal(special: special)
-        updatePlayerCards()
-        
-        round = playRound(lead: lead, hands: hands)
-        playCards(round: round)
-    }
     
     func playCards(round: [(position: Int, card: Card)]) {
         if round.count >= 1 {
@@ -136,6 +139,7 @@ class PlayingVC: UIViewController {
             }
         }
     }
+    
     
     func tapOccurred(sender: UIGestureRecognizer) {
         if (respondingToTouches) {
@@ -195,6 +199,7 @@ class PlayingVC: UIViewController {
         }
     }
     
+    
     func playCard(card: Card) {
         cardFour.image = UIImage(named: getCardImageName(card))
         cardFour.layer.zPosition = 4
@@ -216,7 +221,6 @@ class PlayingVC: UIViewController {
         hands[0].sort()
         playerCardsStk.refreshCards(hands[0])
     }
-    
     
     
     func flashNextImg(currentRule: Int) {
