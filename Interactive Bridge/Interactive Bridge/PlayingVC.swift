@@ -14,10 +14,10 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var ruleLbl: UILabel!
     @IBOutlet weak var selectedSuitImg: UIImageView!
     @IBOutlet weak var trumpSuitImg: UIImageView!
-    @IBOutlet weak var cardNorth: UIImageView!
-    @IBOutlet weak var cardSouth: UIImageView!
-    @IBOutlet weak var cardEast: UIImageView!
-    @IBOutlet weak var cardWest: UIImageView!
+    @IBOutlet weak var cardOne: UIImageView!
+    @IBOutlet weak var cardTwo: UIImageView!
+    @IBOutlet weak var cardThree: UIImageView!
+    @IBOutlet weak var cardFour: UIImageView!
     @IBOutlet weak var playerCardsStk: CardsStackView!
     @IBOutlet weak var warningLbl: UILabel!
     @IBOutlet weak var nextImg: UIImageView!
@@ -130,20 +130,20 @@ class PlayingVC: UIViewController {
             var cardImageView: UIImageView!
             switch play.position {
             case 1:
-                cardImageView = self.cardWest
+                cardImageView = self.cardOne
             case 2:
-                cardImageView = self.cardNorth
+                cardImageView = self.cardTwo
             case 3:
-                cardImageView = self.cardEast
+                cardImageView = self.cardThree
             case 4:
-                cardImageView = self.cardSouth
+                cardImageView = self.cardFour
             default:
                 print("Error: default case reached in playCards")
             }
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(index * 500)) { [index] in
                 cardImageView.image = UIImage(named: getCardImageName(play.card))
                 cardImageView.layer.zPosition = CGFloat(index + 1)
-                if cardImageView == self.cardEast {
+                if cardImageView == self.cardThree {
                     self.respondingToTouches = true
                 }
             }
@@ -187,8 +187,8 @@ class PlayingVC: UIViewController {
                 self.warningLbl.alpha = 0
             })
         } else {
-            cardSouth.image = UIImage(named: getCardImageName(selectedCard!.card!))
-            cardSouth.layer.zPosition = 4
+            cardFour.image = UIImage(named: getCardImageName(selectedCard!.card!))
+            cardFour.layer.zPosition = 4
             
             playerHand.removeCard(card: selectedCard!.card!)
             round.append((position: 4, card: selectedCard!.card!))
@@ -222,10 +222,10 @@ class PlayingVC: UIViewController {
     func showWinner(winner: Int) {
         // implement an animation of some sort to indicate winner
         
-        cardNorth.image = nil
-        cardSouth.image = nil
-        cardEast.image = nil
-        cardWest.image = nil
+        cardOne.image = nil
+        cardTwo.image = nil
+        cardThree.image = nil
+        cardFour.image = nil
     }
     
     func updatePlayerCards() {
