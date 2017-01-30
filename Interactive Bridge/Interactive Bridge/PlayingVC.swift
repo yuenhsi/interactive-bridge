@@ -116,25 +116,32 @@ class PlayingVC: UIViewController {
         if round.count >= 1 {
             selectedSuit = round[0].card.Suit
         }
+        let startingIndex = round.index(where: { $0.position == 4 }) ?? -1
         for (index, play) in round.enumerated() {
-            var cardImageView: UIImageView!
-            switch play.position {
-            case 1:
-                cardImageView = self.cardOne
-            case 2:
-                cardImageView = self.cardTwo
-            case 3:
-                cardImageView = self.cardThree
-            case 4:
-                cardImageView = self.cardFour
-            default:
-                print("Error: default case reached in playCards")
-            }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(index * 500)) { [index] in
-                cardImageView.image = UIImage(named: getCardImageName(play.card))
-                cardImageView.layer.zPosition = CGFloat(index + 1)
-                if cardImageView == self.cardThree {
-                    self.respondingToTouches = true
+            if index > startingIndex {
+                var cardImageView: UIImageView!
+                switch play.position {
+                case 1:
+                    cardImageView = self.cardOne
+                case 2:
+                    cardImageView = self.cardTwo
+                case 3:
+                    cardImageView = self.cardThree
+                default:
+                    print("Error: default case reached in playCards")
+                }
+                var delay = index * 500
+                var zIndex = index + 1
+                if startingIndex != -1 {
+                    delay = (index - startingIndex) * 500
+                    zIndex = index + 4
+                }
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)) { [zIndex] in
+                    cardImageView.image = UIImage(named: getCardImageName(play.card))
+                    cardImageView.layer.zPosition = CGFloat(zIndex)
+                    if cardImageView == self.cardThree {
+                        self.respondingToTouches = true
+                    }
                 }
             }
         }
