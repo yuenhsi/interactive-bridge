@@ -20,6 +20,7 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var cardFour: UIImageView!
     @IBOutlet weak var playerCardsStk: CardsStackView!
     @IBOutlet weak var playerOneStk: CardsStackView!
+    @IBOutlet weak var playerTwoStk: CardsStackView!
     @IBOutlet weak var playerThreeStk: CardsStackView!
     @IBOutlet weak var warningLbl: UILabel!
     @IBOutlet weak var nextImg: UIImageView!
@@ -132,6 +133,7 @@ class PlayingVC: UIViewController {
                     playerOneStk.removeCard()
                 case 2:
                     cardImageView = self.cardTwo
+                    playerTwoStk.removeCard()
                 case 3:
                     cardImageView = self.cardThree
                     playerThreeStk.removeCard()

@@ -580,6 +580,7 @@
                         <outlet property="playerCardsStk" destination="5BF-xs-vzk" id="504-xG-DJl"/>
                         <outlet property="playerOneStk" destination="LQu-t3-Y9T" id="JoP-LC-1Ml"/>
                         <outlet property="playerThreeStk" destination="l18-JW-yqU" id="ICo-Zr-ToE"/>
+                        <outlet property="playerTwoStk" destination="ZWB-nm-uE8" id="edh-gh-W8G"/>
                         <outlet property="ruleLbl" destination="uP4-a0-a6h" id="V3C-Ah-L81"/>
                         <outlet property="selectedSuitImg" destination="rMe-C6-Rhg" id="kKD-1S-OY3"/>
                         <outlet property="titleLbl" destination="zRh-oi-8lC" id="HZ5-Ro-7KD"/>
