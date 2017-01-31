@@ -23,5 +23,9 @@ class CardsStackView: UIStackView {
         let subviews = self.subviews.filter { ($0 as! CardImageView).card == card }
         subviews[0].removeFromSuperview()
     }
+    
+    func removeCard() {
+        self.subviews[0].removeFromSuperview()
+    }
 
 }

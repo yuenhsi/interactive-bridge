@@ -129,10 +129,12 @@ class PlayingVC: UIViewController {
                 switch play.position {
                 case 1:
                     cardImageView = self.cardOne
+                    playerOneStk.removeCard()
                 case 2:
                     cardImageView = self.cardTwo
                 case 3:
                     cardImageView = self.cardThree
+                    playerThreeStk.removeCard()
                 default:
                     print("Error: default case reached in playCards")
                 }
