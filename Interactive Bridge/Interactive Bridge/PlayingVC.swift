@@ -230,7 +230,7 @@ class PlayingVC: UIViewController {
     }
     
     func showWinner(winner: Int) {
-        let winnerCard = getWinnerCard(winner)
+        let winnerCard = getCard(position: winner)
         
         winnerCard.layer.borderColor = UIColor.red.cgColor
         winnerCard.layer.borderWidth = 2
@@ -246,20 +246,20 @@ class PlayingVC: UIViewController {
         }
     }
     
-    func getWinnerCard(_ winner: Int) -> UIImageView {
-        if winner == 1 {
+    func getCard(position: Int) -> UIImageView {
+        if position == 1 {
             return self.cardOne
         }
-        if winner == 2 {
+        if position == 2 {
             return self.cardTwo
         }
-        if winner == 3 {
+        if position == 3 {
             return self.cardThree
         }
-        if winner == 4 {
+        if position == 4 {
             return self.cardFour
         }
-        print("winner not between range of 1 to 4")
+        print("position not between range of 1 to 4")
         return UIImageView()
     }
     
