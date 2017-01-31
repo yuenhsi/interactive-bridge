@@ -175,7 +175,7 @@ class PlayingVC: UIViewController {
                             self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: -20)
                         })
                     } else {
-                        if (selectedCard?.card!.Suit != selectedSuit) {
+                        if (selectedSuit != nil && selectedCard?.card!.Suit != selectedSuit && playerHand.hasSuit(suit: selectedSuit)) {
                             selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
                             selectedCard = nil
                             warningLbl.text = "Please follow suit!"

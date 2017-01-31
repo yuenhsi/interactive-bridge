@@ -44,4 +44,11 @@ class Hand {
     func removeAll() {
         self.cards.removeAll()
     }
+    
+    func hasSuit(suit: Suit?) -> Bool {
+        if suit == nil {
+            return true
+        }
+        return self.cards.contains(where: { $0.Suit == suit} )
+    }
 }
