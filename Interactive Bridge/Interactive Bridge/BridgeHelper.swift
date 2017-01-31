@@ -111,6 +111,6 @@ func getPositionFromNumber(number: Int, playerPosition: Position) -> Position {
         return Position.east
     default:
         print("something wrong happened... switch on mod 4 not returning 0-3")
-        return Position.west
+        return Position.south
     }
 }

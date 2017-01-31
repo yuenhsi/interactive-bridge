@@ -73,7 +73,50 @@ class PlayingVC: UIViewController {
     }
     
     
+    func giveLesson() {
+        
+        switch currentRule {
+        case 1:
+            
+            // rule 1: display 1-13 on cards (no trump, no selected)
+            for (index, v) in playerCardsStk.subviews.enumerated() {
+                if let card = v as? CardImageView {
+                    card.setLabel(labelText: "\(index + 1)")
+                }
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
+                self.flashNextImg(currentRule: 1)
+            }
+        
+        case 2:
+            
+            // rule 2: let player play (no trump, selected)
+            cardThreshold = 11
+            startGame(special: .TWO_EACH_SUIT, lead: .west)
+        
+        case 3:
+            
+            // rule 3: let player trump (trump, selected)
+            return
+        
+        case 4:
+            
+            // rule 4: let player trump (trump, selected)
+            return
+        
+        case 5:
+            
+            // rule 5: play (trump, selected)
+            return
+            
+        default:
+            print("something wrong occured; displaying rule \(currentRule) of 5.")
+        }
+    }
+    
+    
     func startGame(special: handReqs?, lead: Position) {
+        
         var deck = Deck()!
         hands = deck.deal(special: special)
         updatePlayerCards()
@@ -83,78 +126,54 @@ class PlayingVC: UIViewController {
     }
     
     
-    func giveLesson() {
-        switch currentRule {
-        case 1:
-            for (index, v) in playerCardsStk.subviews.enumerated() {
-                if let card = v as? CardImageView {
-                    card.setLabel(labelText: "\(index + 1)")
-                }
-            }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
-                self.flashNextImg(currentRule: 1)
-            }
-        case 2:
-            cardThreshold = 11
-            startGame(special: .TWO_EACH_SUIT, lead: .west)
-        case 3:
-            return
-        case 4:
-            return
-        case 5:
-            return
-        default:
-            print("something wrong occured; displaying rule \(currentRule) of 5.")
-        }
+    func playCards(round: [(position: Int, card: Card)], afterRoundEnds: @escaping (() -> ()) = {}) {
         
-        // rule 1: display 1-13 on cards (no trump, no selected)
-        // rule 2: let player play (no trump, selected)
-        // rule 3: let player trump (trump, selected)
-        // rule 4: let player trump (trump, selected)
-        // rule 5: play (trump, selected)
-    }
-    
-    
-    func playCards(round: [(position: Int, card: Card)], completed: (() -> ())? = nil) {
-        if round.count >= 1 {
-            selectedSuit = round[0].card.Suit
-        } else {
+        if round.count == 0 {
+            
+            // player is starting the round, thus playRound returned and empty array
             selectedSuit = nil
             self.respondingToTouches = true
-        }
-        let startingIndex = round.index(where: { $0.position == 4 }) ?? -1
-        for (index, play) in round.enumerated() {
-            if index > startingIndex {
-                hands[play.position].removeCard(card: play.card)
-                var cardImageView: UIImageView!
-                switch play.position {
-                case 1:
-                    cardImageView = self.cardOne
-                    playerOneStk.removeCard()
-                case 2:
-                    cardImageView = self.cardTwo
-                    playerTwoStk.removeCard()
-                case 3:
-                    cardImageView = self.cardThree
-                    playerThreeStk.removeCard()
-                default:
-                    print("Error: default case reached in playCards")
-                }
-                var delay = index * 500
-                var zIndex = index + 1
-                if startingIndex != -1 {
-                    delay = (index - startingIndex) * 500
-                    zIndex = index + 4
-                }
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)) { [zIndex, index] in
-                    cardImageView.image = UIImage(named: getCardImageName(play.card))
-                    cardImageView.layer.zPosition = CGFloat(zIndex)
-                    if cardImageView == self.cardThree {
-                        self.respondingToTouches = true
+            
+        } else {
+            
+            // check whether player has played yet this round
+            selectedSuit = round[0].card.Suit
+            let startingIndex = round.index(where: { $0.position == 4 }) ?? -1
+            
+            for (index, play) in round.enumerated() {
+                
+                // if player has played this round, cards played prior to player's card have already been displayed
+                if index > startingIndex {
+                    
+                    let slot = getSlot(position: play.position)
+                    let stack = getStack(position: play.position)
+                    
+                    hands[play.position].removeCard(card: play.card)
+                    stack.removeCard()
+                    
+                    var delay: Int
+                    var zIndex: Int
+                    
+                    if startingIndex != -1 {
+                        delay = (index - startingIndex) * 500
+                        zIndex = index + 4
+                    } else {
+                        delay = index * 500
+                        zIndex = index + 1
                     }
-                    if index == 3 {
-                        if completed != nil {
-                            completed!()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)) { [zIndex, index] in
+                        
+                        slot.image = UIImage(named: getCardImageName(play.card))
+                        slot.layer.zPosition = CGFloat(zIndex)
+                        
+                        if slot == self.cardThree {
+                            // enable touch if it's player's turn
+                            self.respondingToTouches = true
+                        }
+                        if index == 3 {
+                            // execute afterRoundEnds closure if round has ended
+                            afterRoundEnds()
                         }
                     }
                 }
@@ -164,24 +183,38 @@ class PlayingVC: UIViewController {
     
     
     func tapOccurred(sender: UIGestureRecognizer) {
+        
         if (respondingToTouches) {
+            
             let location = sender.location(in: playerCardsStk)
             let touchedView = playerCardsStk.hitTest(location, with: nil)
+            
             if let tappedCard = touchedView as? CardImageView {
+                
+                // no cards already selected
                 if (selectedCard == nil) {
+                    
                     selectedCard = tappedCard
                     UIView.animate(withDuration: 0.2, animations: {
                         self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: -20)
                     })
+                    
                 } else {
+                    
+                    // selected card differs from tapped card
                     if selectedCard!.card != tappedCard.card! {
+                        
                         self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
                         selectedCard = tappedCard
                         UIView.animate(withDuration: 0.2, animations: {
                             self.selectedCard!.transform = CGAffineTransform(translationX: 0, y: -20)
                         })
+                        
                     } else {
-                        if (selectedSuit != nil && selectedCard?.card!.Suit != selectedSuit && playerHand.hasSuit(suit: selectedSuit)) {
+                        
+                        // selected card tapped; doesn't correspond to selectedSuit; player has selectedSuit
+                        if (selectedCard!.card!.Suit != selectedSuit && playerHand.hasSuit(suit: selectedSuit)) {
+                            
                             selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
                             selectedCard = nil
                             warningLbl.text = "Please follow suit!"
@@ -190,22 +223,26 @@ class PlayingVC: UIViewController {
                             UIView.animate(withDuration: 1, animations: {
                                 self.warningLbl.alpha = 0
                             })
+                            
                         } else {
+                            
                             playCard(card: selectedCard!.card!)
                             selectedCard = nil
                             respondingToTouches = false
-                            updatePlayerCards()
+                            
                             if round.count != 4 {
+                                
                                 round = finishRound(round: round, hands: hands)
-                                playCards(round: round, completed: {
+                                playCards(round: round, afterRoundEnds: {
                                     let winner = getRoundWinner(round: self.round, trump: self.trumpSuit)
                                     self.round = nil
-                                    self.showWinner(winner: winner)
+                                    self.showWinnerAndContinue(winner: winner)
                                 })
+                                
                             } else {
                                 let winner = getRoundWinner(round: round, trump: trumpSuit)
                                 round = nil
-                                showWinner(winner: winner)
+                                showWinnerAndContinue(winner: winner)
                             }
                         }
                     }
@@ -221,23 +258,11 @@ class PlayingVC: UIViewController {
         
         playerHand.removeCard(card: card)
         round.append((position: 4, card: card))
+        updatePlayerCards()
     }
     
-    func continueGame(winner: Int) {
-        if cardThreshold != nil {
-            if playerHand.cards.count < cardThreshold! {
-                flashNextImg(currentRule: currentRule)
-            }
-        }
-        if playerHand.cards.count > 0 {
-            round = playRound(lead: getPositionFromNumber(number: winner, playerPosition: .south), hands: hands)
-            playCards(round: round)
-        }
-    }
-    
-    func showWinner(winner: Int) {
-        let winnerCard = getCard(position: winner)
-        
+    func showWinnerAndContinue(winner: Int) {
+        let winnerCard = getSlot(position: winner)
         winnerCard.layer.borderColor = UIColor.red.cgColor
         winnerCard.layer.borderWidth = 2
         
@@ -248,11 +273,23 @@ class PlayingVC: UIViewController {
             self.cardThree.image = nil
             self.cardFour.image = nil
             
-            self.continueGame(winner: winner)
+            self.continueGame(roundWinner: winner)
         }
     }
     
-    func getCard(position: Int) -> UIImageView {
+    func continueGame(roundWinner: Int) {
+        if cardThreshold != nil {
+            if playerHand.cards.count < cardThreshold! {
+                flashNextImg(currentRule: currentRule)
+            }
+        }
+        if playerHand.cards.count > 0 {
+            round = playRound(lead: getPositionFromNumber(number: roundWinner, playerPosition: .south), hands: hands)
+            playCards(round: round)
+        }
+    }
+    
+    func getSlot(position: Int) -> UIImageView {
         if position == 1 {
             return self.cardOne
         }
@@ -269,11 +306,27 @@ class PlayingVC: UIViewController {
         return UIImageView()
     }
     
+    func getStack(position: Int) -> CardsStackView {
+        if position == 1 {
+            return self.playerOneStk
+        }
+        if position == 2 {
+            return self.playerTwoStk
+        }
+        if position == 3 {
+            return self.playerThreeStk
+        }
+        if position == 4 {
+            return self.playerCardsStk
+        }
+        print("position not between range of 1 to 4")
+        return CardsStackView()
+    }
+    
     func updatePlayerCards() {
         hands[0].sort()
         playerCardsStk.refreshCards(hands[0])
     }
-    
     
     func flashNextImg(currentRule: Int) {
         timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { [weak self] _ in
