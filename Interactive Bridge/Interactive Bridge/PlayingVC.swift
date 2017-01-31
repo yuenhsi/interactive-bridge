@@ -162,10 +162,11 @@ class PlayingVC: UIViewController {
                         zIndex = index + 1
                     }
                     
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)) { [zIndex, index] in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay)) { [zIndex, index, stack] in
                         
                         slot.image = UIImage(named: getCardImageName(play.card))
                         slot.layer.zPosition = CGFloat(zIndex)
+                        stack.removeCard()
                         
                         if slot == self.cardThree {
                             // enable touch if it's player's turn
