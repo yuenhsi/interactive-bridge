@@ -19,6 +19,8 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var cardThree: UIImageView!
     @IBOutlet weak var cardFour: UIImageView!
     @IBOutlet weak var playerCardsStk: CardsStackView!
+    @IBOutlet weak var playerOneStk: CardsStackView!
+    @IBOutlet weak var playerThreeStk: CardsStackView!
     @IBOutlet weak var warningLbl: UILabel!
     @IBOutlet weak var nextImg: UIImageView!
     

@@ -353,43 +353,43 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-19" translatesAutoresizingMaskIntoConstraints="NO" id="LQu-t3-Y9T" customClass="CardsStackView" customModule="Interactive_Bridge" customModuleProvider="target">
                                 <rect key="frame" x="58" y="308" width="50" height="227"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Ayv-lB-ELP">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Ayv-lB-ELP" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="CS0-VT-2lo">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="CS0-VT-2lo" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="16" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-LD-F4P">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="c6i-LD-F4P" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="32" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Jgd-hd-R0i">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Jgd-hd-R0i" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="48" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="oud-DP-Jck">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="oud-DP-Jck" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="p2o-Sw-PSW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="p2o-Sw-PSW" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="80" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="t35-Lq-pB4">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="t35-Lq-pB4" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="96" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="sMx-KB-vGB">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="sMx-KB-vGB" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="112" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="jNr-jo-fKQ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="jNr-jo-fKQ" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="S6Q-NF-GUB">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="S6Q-NF-GUB" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="144" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-IA-Ec2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-IA-Ec2" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="kJS-Tv-578">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="kJS-Tv-578" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="176" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="w27-pH-k5a">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="w27-pH-k5a" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="192" width="50" height="35"/>
                                     </imageView>
                                 </subviews>
@@ -397,43 +397,43 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-19" translatesAutoresizingMaskIntoConstraints="NO" id="l18-JW-yqU" customClass="CardsStackView" customModule="Interactive_Bridge" customModuleProvider="target">
                                 <rect key="frame" x="916" y="308" width="50" height="227"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="JFe-Wy-Chd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="JFe-Wy-Chd" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="fBj-UD-wBi">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="fBj-UD-wBi" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="16" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="I1b-qD-eHw">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="I1b-qD-eHw" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="32" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Ji1-aN-dbp">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Ji1-aN-dbp" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="48" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="67M-Fb-15o">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="67M-Fb-15o" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Dmy-Rd-JNl">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Dmy-Rd-JNl" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="80" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="wWJ-Tt-RCc">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="wWJ-Tt-RCc" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="96" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="9p8-AU-9s6">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="9p8-AU-9s6" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="112" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="bW7-hc-Fq6">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="bW7-hc-Fq6" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Lqc-1T-t33">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="Lqc-1T-t33" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="144" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="kOH-1P-pxz">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="kOH-1P-pxz" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="IYs-zp-aID">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="IYs-zp-aID" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="176" width="50" height="35"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="c0V-aE-IIE">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackRotated" translatesAutoresizingMaskIntoConstraints="NO" id="c0V-aE-IIE" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="192" width="50" height="35"/>
                                     </imageView>
                                 </subviews>
@@ -507,6 +507,8 @@
                         <outlet property="cardTwo" destination="CO8-7c-3hJ" id="U0S-uD-yUl"/>
                         <outlet property="nextImg" destination="5cl-hU-8vD" id="tux-3w-Sa1"/>
                         <outlet property="playerCardsStk" destination="5BF-xs-vzk" id="504-xG-DJl"/>
+                        <outlet property="playerOneStk" destination="LQu-t3-Y9T" id="JoP-LC-1Ml"/>
+                        <outlet property="playerThreeStk" destination="l18-JW-yqU" id="ICo-Zr-ToE"/>
                         <outlet property="ruleLbl" destination="uP4-a0-a6h" id="V3C-Ah-L81"/>
                         <outlet property="selectedSuitImg" destination="rMe-C6-Rhg" id="kKD-1S-OY3"/>
                         <outlet property="titleLbl" destination="zRh-oi-8lC" id="HZ5-Ro-7KD"/>
