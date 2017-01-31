@@ -285,7 +285,7 @@
                                         <color key="textColor" red="0.50235021114349365" green="0.34360355138778687" blue="0.1333068460226059" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hearts" translatesAutoresizingMaskIntoConstraints="NO" id="koa-sL-Npe">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NA" translatesAutoresizingMaskIntoConstraints="NO" id="koa-sL-Npe">
                                         <rect key="frame" x="130.5" y="3" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="koa-sL-Npe" secondAttribute="height" multiplier="1:1" id="Vcx-vO-w8W"/>
@@ -599,7 +599,7 @@
         <image name="Button2" width="638" height="94"/>
         <image name="Button3" width="638" height="94"/>
         <image name="Clubs" width="650" height="650"/>
-        <image name="Hearts" width="650" height="650"/>
+        <image name="NA" width="650" height="650"/>
         <image name="Next" width="55" height="21"/>
         <image name="Prev" width="50" height="21"/>
         <image name="Rectangle" width="185" height="43"/>
