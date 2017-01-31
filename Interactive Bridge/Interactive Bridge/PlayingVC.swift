@@ -115,6 +115,9 @@ class PlayingVC: UIViewController {
     func playCards(round: [(position: Int, card: Card)], completed: (() -> ())? = nil) {
         if round.count >= 1 {
             selectedSuit = round[0].card.Suit
+        } else {
+            selectedSuit = nil
+            self.respondingToTouches = true
         }
         let startingIndex = round.index(where: { $0.position == 4 }) ?? -1
         for (index, play) in round.enumerated() {
