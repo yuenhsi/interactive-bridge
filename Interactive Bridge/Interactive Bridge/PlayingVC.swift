@@ -25,10 +25,12 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var warningLbl: UILabel!
     @IBOutlet weak var nextImg: UIImageView!
     
+    
     var currentRule: Int! {
         didSet {
             titleLbl.text = "Playing: Rule \(currentRule!) / \(playingRules.count)"
             ruleLbl.text = playingRules[currentRule - 1]
+            giveLesson()
         }
     }
     var selectedSuit: Suit? {
@@ -67,9 +69,7 @@ class PlayingVC: UIViewController {
         super.viewDidLoad()
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapOccurred)))
-    
         currentRule = 1
-        startLessons()
     }
     
     
@@ -83,7 +83,7 @@ class PlayingVC: UIViewController {
     }
     
     
-    func startLessons() {
+    func giveLesson() {
         switch currentRule {
         case 1:
             for (index, v) in playerCardsStk.subviews.enumerated() {
@@ -295,7 +295,6 @@ class PlayingVC: UIViewController {
         } else {
             currentRule = currentRule! + 1
         }
-        startLessons()
     }
     
     @IBAction func prevBtnPressed(_ sender: Any) {
@@ -304,6 +303,5 @@ class PlayingVC: UIViewController {
         } else {
             currentRule = currentRule! - 1
         }
-        startLessons()
     }
 }
