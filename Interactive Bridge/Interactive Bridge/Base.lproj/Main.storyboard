@@ -163,13 +163,6 @@
                                     <constraint firstAttribute="height" constant="33" id="apw-Wj-ENM"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ally Hand" translatesAutoresizingMaskIntoConstraints="NO" id="jey-Ys-YvW">
-                                <rect key="frame" x="252" y="220" width="521" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5up-r4-tJ0"/>
-                                    <constraint firstAttribute="width" constant="521" id="HMf-4q-11C"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The person who starts the trick gets to decide the suit. Everyone must “follow suit” if possible." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uP4-a0-a6h">
                                 <rect key="frame" x="52" y="104" width="920" height="66"/>
                                 <constraints>
@@ -227,6 +220,53 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="0G0-xk-9P8"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZWB-nm-uE8" customClass="CardsStackView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                <rect key="frame" x="238" y="255" width="548" height="45"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="08g-DO-n88" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-Ln-ftD" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="42" y="0.0" width="42.5" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="NJI-YM-vUW" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="84.5" y="0.0" width="42" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="2hu-BZ-hcK" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="126.5" y="0.0" width="42" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="aMv-x9-h2F" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="168.5" y="0.0" width="42.5" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="NpK-Hv-B5i" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="211" y="0.0" width="42" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="trf-xA-6jG" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="253" y="0.0" width="42" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="1hw-zg-xQq" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="295" y="0.0" width="42" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="xFb-lw-dfq" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="337" y="0.0" width="42.5" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="6Z1-7f-kz1" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="379.5" y="0.0" width="42" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="7zo-ca-pua" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="421.5" y="0.0" width="42" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="h5e-W3-Tw5" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="463.5" y="0.0" width="42.5" height="45"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBack" translatesAutoresizingMaskIntoConstraints="NO" id="i3g-PE-id1" customClass="CardImageView" customModule="Interactive_Bridge" customModuleProvider="target">
+                                        <rect key="frame" x="506" y="0.0" width="42" height="45"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="WtE-Tc-K7O"/>
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="Ua0-r0-iiC">
@@ -317,28 +357,28 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZm-sT-4KZ">
-                                <rect key="frame" x="515" y="343" width="100" height="135"/>
+                                <rect key="frame" x="515" y="354.5" width="100" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="MI6-Jt-Cdy"/>
                                     <constraint firstAttribute="width" constant="100" id="hEf-aE-0Tc"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CO8-7c-3hJ">
-                                <rect key="frame" x="465" y="303" width="100" height="135"/>
+                                <rect key="frame" x="465" y="314.5" width="100" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="b4R-WD-gAU"/>
                                     <constraint firstAttribute="height" constant="135" id="jBe-lT-nrW"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fmo-f3-F7u">
-                                <rect key="frame" x="485" y="418" width="100" height="135"/>
+                                <rect key="frame" x="485" y="429.5" width="100" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="rkP-3Q-gDD"/>
                                     <constraint firstAttribute="height" constant="135" id="uvO-bA-1d2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YQq-gR-zQJ">
-                                <rect key="frame" x="435" y="378" width="100" height="135"/>
+                                <rect key="frame" x="435" y="389.5" width="100" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="JOn-Ad-BvM"/>
                                     <constraint firstAttribute="height" constant="135" id="WQD-fA-yK0"/>
@@ -448,17 +488,20 @@
                             <constraint firstItem="J1F-oK-Psg" firstAttribute="trailing" secondItem="sbT-zb-yKn" secondAttribute="trailingMargin" id="8PI-b3-zf4"/>
                             <constraint firstItem="YQq-gR-zQJ" firstAttribute="top" secondItem="CO8-7c-3hJ" secondAttribute="bottom" constant="-60" id="9cs-Nw-WFW"/>
                             <constraint firstItem="d9y-91-fDW" firstAttribute="width" secondItem="JHR-Sb-6kA" secondAttribute="width" id="AV0-to-3ls"/>
+                            <constraint firstItem="ZWB-nm-uE8" firstAttribute="leading" secondItem="RwJ-Mq-yt0" secondAttribute="leading" constant="210" id="Cij-Q1-Hhy"/>
                             <constraint firstItem="V1M-WH-A6M" firstAttribute="width" secondItem="5cl-hU-8vD" secondAttribute="width" id="CvG-9K-NVf"/>
+                            <constraint firstItem="ZWB-nm-uE8" firstAttribute="top" secondItem="RwJ-Mq-yt0" secondAttribute="top" constant="65" id="DrB-yb-Tcf"/>
                             <constraint firstItem="5BF-xs-vzk" firstAttribute="bottom" secondItem="RwJ-Mq-yt0" secondAttribute="bottom" constant="-10" id="G50-R2-gFp"/>
                             <constraint firstItem="V1M-WH-A6M" firstAttribute="centerY" secondItem="5cl-hU-8vD" secondAttribute="centerY" id="Gby-ar-03W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l18-JW-yqU" secondAttribute="trailing" constant="38" id="Gzg-dr-ekv"/>
+                            <constraint firstItem="ZWB-nm-uE8" firstAttribute="trailing" secondItem="RwJ-Mq-yt0" secondAttribute="trailing" constant="-210" id="H3V-BH-RMu"/>
                             <constraint firstItem="RwJ-Mq-yt0" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" constant="8" id="Me1-Fm-ASB"/>
                             <constraint firstItem="Y4O-od-g96" firstAttribute="height" secondItem="lf5-wN-X8r" secondAttribute="height" constant="-10" id="Mzc-Oi-ixM"/>
                             <constraint firstItem="Fmo-f3-F7u" firstAttribute="leading" secondItem="CO8-7c-3hJ" secondAttribute="trailing" constant="-80" id="OD7-xz-IEg"/>
                             <constraint firstItem="V1M-WH-A6M" firstAttribute="height" secondItem="5cl-hU-8vD" secondAttribute="height" id="P1r-Zx-Fkd"/>
                             <constraint firstItem="Y4O-od-g96" firstAttribute="width" secondItem="lf5-wN-X8r" secondAttribute="width" constant="-10" id="PG5-XQ-1Ke"/>
                             <constraint firstItem="zRh-oi-8lC" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" constant="4" id="PaH-JN-jmh"/>
-                            <constraint firstItem="YQq-gR-zQJ" firstAttribute="centerY" secondItem="RwJ-Mq-yt0" secondAttribute="centerY" id="QN6-jE-vAG"/>
+                            <constraint firstItem="YQq-gR-zQJ" firstAttribute="centerY" secondItem="RwJ-Mq-yt0" secondAttribute="centerY" constant="12" id="QN6-jE-vAG"/>
                             <constraint firstItem="CO8-7c-3hJ" firstAttribute="leading" secondItem="YQq-gR-zQJ" secondAttribute="trailing" constant="-70" id="Qsr-yd-ewK"/>
                             <constraint firstItem="JHR-Sb-6kA" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" constant="8" id="SRK-Ud-qqh"/>
                             <constraint firstItem="Q3x-GL-Eow" firstAttribute="top" secondItem="5cl-hU-8vD" secondAttribute="bottom" constant="20" id="Tsi-v3-BIb"/>
@@ -472,7 +515,6 @@
                             <constraint firstItem="J1F-oK-Psg" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" id="YBN-Gs-ghk"/>
                             <constraint firstItem="RwJ-Mq-yt0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uP4-a0-a6h" secondAttribute="bottom" constant="5" id="ZJ6-7q-bzy"/>
                             <constraint firstItem="RwJ-Mq-yt0" firstAttribute="top" secondItem="J1F-oK-Psg" secondAttribute="bottom" constant="75" id="ZY6-TV-fEA"/>
-                            <constraint firstItem="jey-Ys-YvW" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" constant="200" id="avA-aw-oJu"/>
                             <constraint firstItem="YQq-gR-zQJ" firstAttribute="centerX" secondItem="RwJ-Mq-yt0" secondAttribute="centerX" constant="-27" id="b67-6v-bWI"/>
                             <constraint firstItem="lf5-wN-X8r" firstAttribute="trailing" secondItem="RwJ-Mq-yt0" secondAttribute="trailing" constant="-10" id="bV8-c7-ELm"/>
                             <constraint firstItem="5BF-xs-vzk" firstAttribute="leading" secondItem="RwJ-Mq-yt0" secondAttribute="leading" constant="30" id="e6P-cf-g65"/>
@@ -486,7 +528,6 @@
                             <constraint firstItem="uP4-a0-a6h" firstAttribute="centerX" secondItem="sbT-zb-yKn" secondAttribute="centerX" id="liO-ik-ZhW"/>
                             <constraint firstItem="5cl-hU-8vD" firstAttribute="top" secondItem="RwJ-Mq-yt0" secondAttribute="bottom" constant="15" id="lq2-Ec-fQf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5cl-hU-8vD" secondAttribute="trailing" constant="6" id="mRr-sC-fSK"/>
-                            <constraint firstItem="jey-Ys-YvW" firstAttribute="centerX" secondItem="sbT-zb-yKn" secondAttribute="centerX" id="miI-kw-Gkk"/>
                             <constraint firstItem="RwJ-Mq-yt0" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" constant="170" id="n2C-VK-HlP"/>
                             <constraint firstItem="zRh-oi-8lC" firstAttribute="centerX" secondItem="J1F-oK-Psg" secondAttribute="centerX" id="qSy-Wl-0zQ"/>
                             <constraint firstItem="BZm-sT-4KZ" firstAttribute="leading" secondItem="YQq-gR-zQJ" secondAttribute="trailing" constant="-20" id="qWd-FU-cCa"/>
@@ -522,7 +563,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Ally Hand" width="521" height="50"/>
         <image name="Board" width="952" height="515"/>
         <image name="Button1" width="638" height="94"/>
         <image name="Button2" width="638" height="94"/>
