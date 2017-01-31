@@ -119,6 +119,7 @@ class PlayingVC: UIViewController {
         let startingIndex = round.index(where: { $0.position == 4 }) ?? -1
         for (index, play) in round.enumerated() {
             if index > startingIndex {
+                hands[play.position].removeCard(card: play.card)
                 var cardImageView: UIImageView!
                 switch play.position {
                 case 1:
