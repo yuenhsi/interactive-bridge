@@ -24,8 +24,18 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var playerThreeStk: CardsStackView!
     @IBOutlet weak var warningLbl: UILabel!
     @IBOutlet weak var nextImg: UIImageView!
+    @IBOutlet weak var tricksLbl: UILabel!
     
-    
+    var playerTricks = 0 {
+        didSet {
+            tricksLbl.text = "Tricks: \(playerTricks) - \(opponentTricks)"
+        }
+    }
+    var opponentTricks = 0 {
+        didSet {
+            tricksLbl.text = "Tricks: \(playerTricks) - \(opponentTricks)"
+        }
+    }
     var currentRule: Int! {
         didSet {
             titleLbl.text = "Playing: Rule \(currentRule!) / \(playingRules.count)"

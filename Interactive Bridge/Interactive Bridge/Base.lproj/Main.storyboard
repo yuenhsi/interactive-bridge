@@ -585,6 +585,7 @@
                         <outlet property="ruleLbl" destination="uP4-a0-a6h" id="V3C-Ah-L81"/>
                         <outlet property="selectedSuitImg" destination="rMe-C6-Rhg" id="kKD-1S-OY3"/>
                         <outlet property="titleLbl" destination="zRh-oi-8lC" id="HZ5-Ro-7KD"/>
+                        <outlet property="tricksLbl" destination="84b-s4-cqB" id="YRm-vx-Lfy"/>
                         <outlet property="trumpSuitImg" destination="koa-sL-Npe" id="ZsE-Qo-ppA"/>
                         <outlet property="warningLbl" destination="n8p-E4-VPd" id="bt0-0w-ArF"/>
                     </connections>
