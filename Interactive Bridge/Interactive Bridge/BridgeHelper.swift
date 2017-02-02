@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameplayKit
 
 func playRound(lead: Position, hands: [Hand]) -> [(position: Int, card: Card)] {
     var round = [(Int, Card)]()
@@ -113,4 +114,8 @@ func getPositionFromNumber(number: Int, playerPosition: Position) -> Position {
         print("something wrong happened... switch on mod 4 not returning 0-3")
         return Position.south
     }
+}
+
+func randomSuit() -> Suit {
+    return GKRandomSource.sharedRandom().arrayByShufflingObjects(in: Suit.allValues)[0]
 }

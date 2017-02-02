@@ -106,16 +106,22 @@ class PlayingVC: UIViewController {
         
         case 3:
             
-            // rule 3: let player trump (trump, selected)
-            return
+            // rule 3: win, then lead (no trump, selected)
+            cardThreshold = 11
+            startGame(special: .ACE_EACH_SUIT, lead: .west)
         
         case 4:
             
-            // rule 4: let player trump (trump, selected)
+            // rule 4: trump, then lead (trump, selected)
+            cardThreshold = 11
+            trumpSuit = randomSuit()
+            startGame(special: .TWO_EACH_SUIT, lead: .west)
             return
         
         case 5:
             
+            trumpSuit = randomSuit()
+            startGame(special: nil, lead: .west)
             // rule 5: play (trump, selected)
             return
             
