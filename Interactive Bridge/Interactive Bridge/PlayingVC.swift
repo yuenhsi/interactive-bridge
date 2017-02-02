@@ -368,8 +368,16 @@ class PlayingVC: UIViewController {
             }
         }
     }
+    
+    func cleanup() {
+        selectedSuit = nil
+        trumpSuit = nil
+        playerTricks = 0
+        opponentTricks = 0
+    }
 
     @IBAction func nextBtnPressed(_ sender: Any) {
+        cleanup()
         if currentRule == playingRules.count {
             currentRule = 1
         } else {
@@ -378,10 +386,12 @@ class PlayingVC: UIViewController {
     }
     
     @IBAction func prevBtnPressed(_ sender: Any) {
+        cleanup()
         if currentRule == 1 {
             currentRule = playingRules.count
         } else {
             currentRule = currentRule! - 1
         }
     }
+    
 }

@@ -117,5 +117,5 @@ func getPositionFromNumber(number: Int, playerPosition: Position) -> Position {
 }
 
 func randomSuit() -> Suit {
-    return GKRandomSource.sharedRandom().arrayByShufflingObjects(in: Suit.allValues)[0]
+    return GKRandomSource.sharedRandom().arrayByShufflingObjects(in: [Suit.clubs, Suit.diamonds, Suit.hearts, Suit.spades])[0]
 }
