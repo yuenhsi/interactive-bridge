@@ -246,12 +246,22 @@ class PlayingVC: UIViewController {
                                 round = finishRound(round: round, hands: hands)
                                 playCards(round: round, afterRoundEnds: {
                                     let winner = getRoundWinner(round: self.round, trump: self.trumpSuit)
+                                    if (winner % 2 == 0) {
+                                        self.playerTricks += 1
+                                    } else {
+                                        self.opponentTricks += 1
+                                    }
                                     self.round = nil
                                     self.showWinnerAndContinue(winner: winner)
                                 })
                                 
                             } else {
                                 let winner = getRoundWinner(round: round, trump: trumpSuit)
+                                if (winner % 2 == 0) {
+                                    playerTricks += 1
+                                } else {
+                                    opponentTricks += 1
+                                }
                                 round = nil
                                 showWinnerAndContinue(winner: winner)
                             }
