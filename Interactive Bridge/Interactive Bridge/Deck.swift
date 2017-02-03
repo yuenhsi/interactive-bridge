@@ -10,7 +10,7 @@ import Foundation
 import GameplayKit
 
 enum handReqs {
-    case TWO_EACH_SUIT, ACE_EACH_SUIT
+    case TWO_EACH_SUIT, ACE_EACH_SUIT, NO_CLUBS
 }
 
 struct Deck {
@@ -48,6 +48,10 @@ struct Deck {
         cards.remove(at: 0)
     }
     
+    mutating func remove(card: Card) {
+        cards.remove(at: cards.index(of: card)!)
+    }
+    
     func peek() -> Card {
         return cards[0]
     }
@@ -57,33 +61,37 @@ struct Deck {
         if cards.count % 4 != 0 {
             return []
         }
-        shuffle()
         var hands = [Hand]()
         for _ in 0..<players {
             hands.append(Hand.init([Card]()))
         }
-        while(cards.count > 0) {
-            for playerIndex in 0..<players {
-                hands[playerIndex].addCard(card: draw())
+        if special == nil {
+            shuffle()
+            while(cards.count > 0) {
+                for playerIndex in 0..<players {
+                    hands[playerIndex].addCard(card: draw())
+                }
             }
         }
-        if special != nil {
+        else {
             switch(special!) {
             case .TWO_EACH_SUIT:
-                while hands[0].cardsIn(suit: Suit.spades) <= 2 || hands[0].cardsIn(suit: Suit.hearts) <= 2 || hands[0].cardsIn(suit: Suit.diamonds) <= 2 || hands[0].cardsIn(suit: Suit.clubs) <= 2 {
+                repeat {
+                    reshuffle()
+                    shuffle()
                     for hand in hands {
                         hand.removeAll()
                     }
-                    reshuffle()
-                    shuffle()
                     while(cards.count > 0) {
                         for playerIndex in 0..<players {
                             hands[playerIndex].addCard(card: draw())
                         }
                     }
                 }
+                while (hands[0].cardsIn(suit: Suit.spades) <= 2 || hands[0].cardsIn(suit: Suit.hearts) <= 2 || hands[0].cardsIn(suit: Suit.diamonds) <= 2 || hands[0].cardsIn(suit: Suit.clubs) <= 2 )
                 return hands
             case .ACE_EACH_SUIT:
+            case .NO_CLUBS:
                 return hands
             }
         }
