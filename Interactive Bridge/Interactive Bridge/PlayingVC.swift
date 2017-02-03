@@ -92,6 +92,7 @@ class PlayingVC: UIViewController {
             
             // rule 1: display 1-13 on cards (no trump, no selected)
             partnerLbl.isHidden = false
+            playerCardsStk.refreshFaceDown()
             for (index, v) in playerCardsStk.subviews.enumerated() {
                 if let card = v as? CardImageView {
                     card.setLabel(labelText: "\(index + 1)")

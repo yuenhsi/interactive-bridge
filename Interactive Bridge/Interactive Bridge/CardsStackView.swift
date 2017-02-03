@@ -35,5 +35,14 @@ class CardsStackView: UIStackView {
             self.addArrangedSubview(cardImage)
         }
     }
+    
+    func refreshFaceDown() {
+        self.subviews.forEach({ $0.removeFromSuperview() })
+        for _ in 1...13 {
+            let faceDownCard = CardImageView()
+            faceDownCard.setFacedownCard(rotated: false)
+            self.addArrangedSubview(faceDownCard)
+        }
+    }
 
 }
