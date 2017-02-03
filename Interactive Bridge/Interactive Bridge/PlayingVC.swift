@@ -114,16 +114,14 @@ class PlayingVC: UIViewController {
             
             // rule 4: trump, then lead (trump, selected)
             cardThreshold = 11
-            trumpSuit = randomSuit()
-            startGame(special: .TWO_EACH_SUIT, lead: .west)
-            return
+            trumpSuit = Suit.spades
+            startGame(special: .NO_CLUBS, lead: .west)
         
         case 5:
             
+            // rule 5: play (trump, selected)
             trumpSuit = randomSuit()
             startGame(special: nil, lead: .west)
-            // rule 5: play (trump, selected)
-            return
             
         default:
             print("something wrong occured; displaying rule \(currentRule) of 5.")
