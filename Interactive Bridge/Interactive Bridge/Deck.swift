@@ -91,6 +91,23 @@ struct Deck {
                 while (hands[0].cardsIn(suit: Suit.spades) <= 2 || hands[0].cardsIn(suit: Suit.hearts) <= 2 || hands[0].cardsIn(suit: Suit.diamonds) <= 2 || hands[0].cardsIn(suit: Suit.clubs) <= 2 )
                 return hands
             case .ACE_EACH_SUIT:
+                shuffle()
+                for suit in Suit.allValues {
+                    let card = Card.init(rank: .ace, suit: suit)
+                    hands[0].addCard(card: card)
+                    remove(card: card)
+                }
+                for _ in 1...4 {
+                    for playerIndex in 1..<players {
+                        hands[playerIndex].addCard(card: draw())
+                    }
+                }
+                while(cards.count > 0) {
+                    for playerIndex in 0..<players {
+                        hands[playerIndex].addCard(card: draw())
+                    }
+                }
+                return hands
             case .NO_CLUBS:
                 return hands
             }
