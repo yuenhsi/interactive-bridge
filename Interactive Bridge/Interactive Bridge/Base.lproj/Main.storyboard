@@ -303,17 +303,17 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="7bQ-c6-3BQ">
-                                <rect key="frame" x="38" y="250" width="150" height="43"/>
+                                <rect key="frame" x="38" y="250" width="170" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="ILB-sc-rAL"/>
+                                    <constraint firstAttribute="width" constant="170" id="ILB-sc-rAL"/>
                                     <constraint firstAttribute="height" constant="43" id="Xem-BE-Sdv"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yz8-Wt-1lQ">
-                                <rect key="frame" x="43" y="255" width="140" height="33"/>
+                                <rect key="frame" x="43" y="255" width="160" height="33"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tricks: 0 - 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84b-s4-cqB">
-                                        <rect key="frame" x="15" y="3" width="110" height="27.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tricks: 0-0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84b-s4-cqB">
+                                        <rect key="frame" x="15" y="3" width="130" height="27.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" red="0.5023502111" green="0.34360355139999998" blue="0.13330684600000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
