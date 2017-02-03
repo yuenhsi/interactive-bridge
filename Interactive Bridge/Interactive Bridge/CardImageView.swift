@@ -14,8 +14,6 @@ class CardImageView: UIImageView {
         didSet {
             if card != nil {
                 self.image = UIImage(named: getCardImageName(card!))
-            } else {
-                self.image = UIImage(named: "cardBack")
             }
         }
     }
@@ -26,6 +24,16 @@ class CardImageView: UIImageView {
         self.contentMode = .scaleAspectFit
         self.isUserInteractionEnabled = true
         
+    }
+    
+    func setFacedownCard(rotated: Bool) {
+        if (rotated) {
+            self.image = UIImage(named: "cardBackRotated")
+            self.contentMode = .scaleAspectFit
+        } else {
+            self.image = UIImage(named: "cardBack")
+            self.contentMode = .scaleAspectFit
+        }
     }
     
     func setLabel(labelText: String) {

@@ -27,5 +27,13 @@ class CardsStackView: UIStackView {
     func removeCard() {
         self.subviews[0].removeFromSuperview()
     }
+    
+    func updateFaceDown(rotated: Bool) {
+        while self.subviews.count < 13 {
+            let cardImage = CardImageView()
+            cardImage.setFacedownCard(rotated: rotated)
+            self.addArrangedSubview(cardImage)
+        }
+    }
 
 }
