@@ -503,10 +503,19 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is your partner, sitting opposite you!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP3-kj-r1E">
+                                <rect key="frame" x="335" y="200" width="354.5" height="27"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="19"/>
+                                <color key="textColor" red="0.33239733411587302" green="0.22660161043894719" blue="0.087992409377259301" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="n8p-E4-VPd" firstAttribute="top" secondItem="RwJ-Mq-yt0" secondAttribute="bottom" constant="-179" id="0b1-Xh-CBA"/>
+                            <constraint firstItem="fP3-kj-r1E" firstAttribute="centerX" secondItem="sbT-zb-yKn" secondAttribute="centerX" id="0k2-rR-tC0"/>
                             <constraint firstItem="uP4-a0-a6h" firstAttribute="top" secondItem="zRh-oi-8lC" secondAttribute="bottom" constant="5" id="3mh-qf-7BY"/>
                             <constraint firstItem="Q3x-GL-Eow" firstAttribute="top" secondItem="JHR-Sb-6kA" secondAttribute="bottom" constant="20" id="6F9-Sy-1J7"/>
                             <constraint firstItem="d9y-91-fDW" firstAttribute="centerX" secondItem="JHR-Sb-6kA" secondAttribute="centerX" id="7sp-7O-ePt"/>
@@ -560,6 +569,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5cl-hU-8vD" secondAttribute="trailing" constant="6" id="mRr-sC-fSK"/>
                             <constraint firstItem="RwJ-Mq-yt0" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" constant="170" id="n2C-VK-HlP"/>
                             <constraint firstItem="yz8-Wt-1lQ" firstAttribute="height" secondItem="7bQ-c6-3BQ" secondAttribute="height" constant="-10" id="nde-sE-Yoh"/>
+                            <constraint firstItem="fP3-kj-r1E" firstAttribute="top" secondItem="uP4-a0-a6h" secondAttribute="bottom" constant="15" id="psR-rU-Fdx"/>
                             <constraint firstItem="zRh-oi-8lC" firstAttribute="centerX" secondItem="J1F-oK-Psg" secondAttribute="centerX" id="qSy-Wl-0zQ"/>
                             <constraint firstItem="BZm-sT-4KZ" firstAttribute="leading" secondItem="YQq-gR-zQJ" secondAttribute="trailing" constant="-20" id="qWd-FU-cCa"/>
                             <constraint firstItem="n8p-E4-VPd" firstAttribute="trailing" secondItem="RwJ-Mq-yt0" secondAttribute="trailing" id="t4P-K7-3uv"/>
@@ -578,6 +588,7 @@
                         <outlet property="cardThree" destination="BZm-sT-4KZ" id="WQC-Zk-knE"/>
                         <outlet property="cardTwo" destination="CO8-7c-3hJ" id="U0S-uD-yUl"/>
                         <outlet property="nextImg" destination="5cl-hU-8vD" id="tux-3w-Sa1"/>
+                        <outlet property="partnerLbl" destination="fP3-kj-r1E" id="BrM-UT-Xc7"/>
                         <outlet property="playerCardsStk" destination="5BF-xs-vzk" id="504-xG-DJl"/>
                         <outlet property="playerOneStk" destination="LQu-t3-Y9T" id="JoP-LC-1Ml"/>
                         <outlet property="playerThreeStk" destination="l18-JW-yqU" id="ICo-Zr-ToE"/>

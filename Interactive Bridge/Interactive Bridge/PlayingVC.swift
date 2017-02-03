@@ -25,6 +25,7 @@ class PlayingVC: UIViewController {
     @IBOutlet weak var warningLbl: UILabel!
     @IBOutlet weak var nextImg: UIImageView!
     @IBOutlet weak var tricksLbl: UILabel!
+    @IBOutlet weak var partnerLbl: UILabel!
     
     var playerTricks = 0 {
         didSet {
@@ -90,6 +91,7 @@ class PlayingVC: UIViewController {
         case 1:
             
             // rule 1: display 1-13 on cards (no trump, no selected)
+            partnerLbl.isHidden = false
             for (index, v) in playerCardsStk.subviews.enumerated() {
                 if let card = v as? CardImageView {
                     card.setLabel(labelText: "\(index + 1)")
@@ -370,6 +372,7 @@ class PlayingVC: UIViewController {
     }
     
     func cleanup() {
+        partnerLbl.isHidden = true
         cardThreshold = nil
         selectedSuit = nil
         trumpSuit = nil
