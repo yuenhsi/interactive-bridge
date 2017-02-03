@@ -248,17 +248,38 @@ class PlayingVC: UIViewController {
                                 let highCard = getHighCard(round: round, trump: trumpSuit)
                                 //check win conditions, if false, break
                                 if selectedCard!.card!.Suit == highCard.Suit {
+                                    
                                     if highCard.Rank > selectedCard!.card!.Rank {
+                                        
+                                        selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
+                                        selectedCard = nil
+                                        warningLbl.text = "Play a card that beats \(highCard.Rank) to win this trick!"
+                                        warningLbl.alpha = 1
+                                        
+                                        UIView.animate(withDuration: 1, animations: {
+                                            self.warningLbl.alpha = 0
+                                        })
                                         print("NOT WINNING CARD!")
                                         return
                                     }
                                 } else {
-                                    if highCard.Suit != trumpSuit {
+                                    
+                                    if selectedCard!.card!.Suit != trumpSuit {
+                                        
+                                        selectedCard!.transform = CGAffineTransform(translationX: 0, y: 0)
+                                        selectedCard = nil
+                                        warningLbl.text = "Play a trump (\(trumpSuit!)) to win this trick!"
+                                        warningLbl.alpha = 1
+                                        
+                                        UIView.animate(withDuration: 1, animations: {
+                                            self.warningLbl.alpha = 0
+                                        })
                                         print("NOT WINNING CARD!!")
                                         return
                                     }
                                 }
                             }
+                            mustWin = false
                             playCard(card: selectedCard!.card!)
                             selectedCard = nil
                             respondingToTouches = false
