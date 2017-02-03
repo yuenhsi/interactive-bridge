@@ -166,7 +166,6 @@ class PlayingVC: UIViewController {
                     let stack = getStack(position: play.position)
                     
                     hands[play.position].removeCard(card: play.card)
-                    stack.removeCard()
                     
                     var delay: Int
                     var zIndex: Int
