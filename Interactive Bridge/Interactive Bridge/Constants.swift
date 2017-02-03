@@ -19,8 +19,8 @@ enum Position: String {
 let playingRules =
     [
         "The aim of Bridge is to win as many Tricks as possible between you and your partner, who sits opposite you. There are 13 tricks per game, one for every card in each players' hand.",
-        "The person who leads decides the suit everyone must follow as the play moves clockwise around the table. If you don't have the decided suit, you can play anything you'd like. Follow suit! ",
-        "The person who plays the highest card in the decided suit wins the trick, unless there is a trump suit. The winner gets to leads. Win the trick, then lead!",
+        "The person who leads decides the suit everyone must follow as the play moves clockwise around the table. If you played the highest card and everyone followed suit, you lead the next round. Follow suit! ",
+        "The person who plays the highest card in the decided suit wins the trick, unless there is a trump suit. The winner gets to leads the next round. Win the trick, then lead!",
         "If there is a trump suit in play, the person who played the highest trump card wins the trick. You can play any card you want if you don't have the selected suit. Play the trump and win the trick! ",
         "Get as many tricks as you can between you and your partner. The score is kept next to the Tricks label - your team's tricks is the first number, and your opponents the second!"
     ]
