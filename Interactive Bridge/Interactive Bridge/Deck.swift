@@ -109,6 +109,21 @@ struct Deck {
                 }
                 return hands
             case .NO_CLUBS:
+                shuffle()
+                for _ in 1...13 {
+                    let i = cards.index(where: { $0.Suit == .clubs })!
+                    let playerIndex = Int(arc4random_uniform(3)) + 1
+                    hands[playerIndex].addCard(card: cards[i])
+                    cards.remove(at: i)
+                }
+                for _ in 1...13 {
+                    hands[0].addCard(card: draw())
+                }
+                while(cards.count > 0) {
+                    for playerIndex in 0..<players {
+                        hands[playerIndex].addCard(card: draw())
+                    }
+                }
                 return hands
             }
         }
