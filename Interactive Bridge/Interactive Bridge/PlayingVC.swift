@@ -71,6 +71,7 @@ class PlayingVC: UIViewController {
     var respondingToTouches = false
     var cardThreshold: Int?
     var selectedCard: CardImageView?
+    var mustWin = false
     weak var timer: Timer?
 
     
@@ -108,12 +109,14 @@ class PlayingVC: UIViewController {
             
             // rule 3: win, then lead (no trump, selected)
             cardThreshold = 11
+            mustWin = true
             startGame(special: .ACE_EACH_SUIT, lead: .west)
         
         case 4:
             
             // rule 4: trump, then lead (trump, selected)
             cardThreshold = 11
+            mustWin = true
             trumpSuit = Suit.spades
             startGame(special: .NO_CLUBS, lead: .west)
         
