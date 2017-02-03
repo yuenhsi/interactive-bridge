@@ -244,7 +244,21 @@ class PlayingVC: UIViewController {
                             })
                             
                         } else {
-                            
+                            if (mustWin) {
+                                let highCard = getHighCard(round: round, trump: trumpSuit)
+                                //check win conditions, if false, break
+                                if selectedCard!.card!.Suit == highCard.Suit {
+                                    if highCard.Rank > selectedCard!.card!.Rank {
+                                        print("NOT WINNING CARD!")
+                                        return
+                                    }
+                                } else {
+                                    if highCard.Suit != trumpSuit {
+                                        print("NOT WINNING CARD!!")
+                                        return
+                                    }
+                                }
+                            }
                             playCard(card: selectedCard!.card!)
                             selectedCard = nil
                             respondingToTouches = false

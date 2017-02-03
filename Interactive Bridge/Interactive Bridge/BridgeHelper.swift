@@ -66,6 +66,26 @@ func finishRound(round: [(position: Int, card: Card)], hands: [Hand]) -> [(posit
     return completedRound
 }
 
+func getHighCard(round: [(position: Int, card: Card)], trump: Suit?) -> Card {
+    
+    guard round.count > 0 else {
+        return Card(rank: .ace, suit: .spades)
+    }
+    var winner = round[0].card
+    
+    for i in 1..<round.count {
+        if round[i].card.Suit == winner.Suit {
+            if round[i].card.Rank > winner.Rank {
+                winner = round[i].card
+            }
+        } else {
+            if round[i].card.Suit == trump {
+                winner = round[i].card
+            }
+        }
+    }
+    return winner
+}
 
 func getRoundWinner(round: [(position: Int, card: Card)], trump: Suit?) -> Int {
     
