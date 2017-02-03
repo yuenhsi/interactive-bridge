@@ -119,8 +119,9 @@ struct Deck {
                 for _ in 1...13 {
                     hands[0].addCard(card: draw())
                 }
-                while(cards.count > 0) {
-                    for playerIndex in 0..<players {
+                // assumes 52 cards, 4 players
+                for playerIndex in 0..<players {
+                    if hands[playerIndex].cards.count < 13 {
                         hands[playerIndex].addCard(card: draw())
                     }
                 }
