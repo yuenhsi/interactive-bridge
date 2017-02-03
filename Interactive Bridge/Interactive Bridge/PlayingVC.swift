@@ -370,10 +370,19 @@ class PlayingVC: UIViewController {
     }
     
     func cleanup() {
+        cardThreshold = nil
         selectedSuit = nil
         trumpSuit = nil
         playerTricks = 0
         opponentTricks = 0
+        cardOne.image = nil
+        cardTwo.image = nil
+        cardThree.image = nil
+        cardFour.image = nil
+        warningLbl.text = ""
+        playerOneStk.updateFaceDown(rotated: true)
+        playerTwoStk.updateFaceDown(rotated: false)
+        playerThreeStk.updateFaceDown(rotated: true)
     }
 
     @IBAction func nextBtnPressed(_ sender: Any) {
