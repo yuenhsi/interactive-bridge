@@ -605,12 +605,43 @@
             </objects>
             <point key="canvasLocation" x="705.46875" y="827.34375"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="sI8-i7-f0f">
+            <objects>
+                <viewController id="yBg-La-6eV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RHZ-m5-EZi"/>
+                        <viewControllerLayoutGuide type="bottom" id="M3Q-M1-MAU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rqT-6s-Lgv">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ComingSoon" translatesAutoresizingMaskIntoConstraints="NO" id="kUI-AR-bQh">
+                                <rect key="frame" x="244" y="125" width="536" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="jso-b2-jaF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="kUI-AR-bQh" firstAttribute="top" secondItem="RHZ-m5-EZi" secondAttribute="bottom" constant="105" id="1QS-OZ-6jr"/>
+                            <constraint firstItem="kUI-AR-bQh" firstAttribute="centerX" secondItem="rqT-6s-Lgv" secondAttribute="centerX" id="r3K-BV-hKe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sda-CH-0LV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524" y="683"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Board" width="952" height="515"/>
         <image name="Button1" width="638" height="94"/>
         <image name="Button2" width="638" height="94"/>
         <image name="Button3" width="638" height="94"/>
+        <image name="ComingSoon" width="536" height="112"/>
         <image name="NA" width="650" height="650"/>
         <image name="Next" width="55" height="21"/>
         <image name="Prev" width="50" height="21"/>
