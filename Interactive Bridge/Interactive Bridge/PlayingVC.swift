@@ -156,6 +156,20 @@ class PlayingVC: UIViewController {
             selectedSuit = nil
             self.respondingToTouches = true
             
+            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
+                if (self?.respondingToTouches == true && self?.round?.count == 0) {
+                    self?.warningLbl.text = "It's your turn to lead!"
+                    self?.warningLbl.alpha = 1
+                    
+                    UIView.animate(withDuration: 2, animations: {
+                        self?.warningLbl.alpha = 0
+                    })
+                } else {
+                    self?.timer?.invalidate()
+                    return
+                }
+            }
+            
         } else {
             
             // check whether player has played yet this round
