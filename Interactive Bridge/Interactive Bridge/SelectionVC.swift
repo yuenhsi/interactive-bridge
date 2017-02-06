@@ -27,11 +27,11 @@ class SelectionVC: UIViewController {
     }
     
     @IBAction func btnTwoPressed(_ sender: Any) {
-        performSegue(withIdentifier: "PlayingVC", sender: nil)
+        performSegue(withIdentifier: "ComingSoonVC", sender: nil)
     }
     
     @IBAction func btnThreePressed(_ sender: Any) {
-        performSegue(withIdentifier: "PlayingVC", sender: nil)
+        performSegue(withIdentifier: "ComingSoonVC", sender: nil)
     }
     
 }

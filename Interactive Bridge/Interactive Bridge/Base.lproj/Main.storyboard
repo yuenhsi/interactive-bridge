@@ -130,6 +130,7 @@
                     </view>
                     <connections>
                         <segue destination="1ze-co-xLx" kind="show" identifier="PlayingVC" id="C8t-gN-fVJ"/>
+                        <segue destination="yBg-La-6eV" kind="show" identifier="ComingSoonVC" id="ykd-Yw-v7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pW3-Ne-FWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -633,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sda-CH-0LV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1524" y="683"/>
+            <point key="canvasLocation" x="1381" y="827"/>
         </scene>
     </scenes>
     <resources>
