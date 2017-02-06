@@ -458,4 +458,7 @@ class PlayingVC: UIViewController {
         }
     }
     
+    @IBAction func menuBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
 }
