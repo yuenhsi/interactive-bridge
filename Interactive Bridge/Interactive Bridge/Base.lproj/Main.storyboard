@@ -512,6 +512,16 @@
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBtn" translatesAutoresizingMaskIntoConstraints="NO" id="4Jm-DT-0wV">
+                                <rect key="frame" x="20" y="20" width="108" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4Jm-DT-0wV" secondAttribute="height" multiplier="108:29" id="UBe-nS-9la"/>
+                                    <constraint firstAttribute="height" constant="29" id="ULl-T3-HoE"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdO-aS-988">
+                                <rect key="frame" x="20" y="20" width="108" height="29"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -519,6 +529,7 @@
                             <constraint firstItem="fP3-kj-r1E" firstAttribute="centerX" secondItem="sbT-zb-yKn" secondAttribute="centerX" id="0k2-rR-tC0"/>
                             <constraint firstItem="uP4-a0-a6h" firstAttribute="top" secondItem="zRh-oi-8lC" secondAttribute="bottom" constant="5" id="3mh-qf-7BY"/>
                             <constraint firstItem="Q3x-GL-Eow" firstAttribute="top" secondItem="JHR-Sb-6kA" secondAttribute="bottom" constant="20" id="6F9-Sy-1J7"/>
+                            <constraint firstItem="4Jm-DT-0wV" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" id="6md-z8-GSG"/>
                             <constraint firstItem="d9y-91-fDW" firstAttribute="centerX" secondItem="JHR-Sb-6kA" secondAttribute="centerX" id="7sp-7O-ePt"/>
                             <constraint firstItem="J1F-oK-Psg" firstAttribute="trailing" secondItem="sbT-zb-yKn" secondAttribute="trailingMargin" id="8PI-b3-zf4"/>
                             <constraint firstItem="YQq-gR-zQJ" firstAttribute="top" secondItem="CO8-7c-3hJ" secondAttribute="bottom" constant="-60" id="9cs-Nw-WFW"/>
@@ -532,14 +543,17 @@
                             <constraint firstItem="ZWB-nm-uE8" firstAttribute="trailing" secondItem="RwJ-Mq-yt0" secondAttribute="trailing" constant="-210" id="H3V-BH-RMu"/>
                             <constraint firstItem="yz8-Wt-1lQ" firstAttribute="width" secondItem="7bQ-c6-3BQ" secondAttribute="width" constant="-10" id="Hx7-VM-w8a"/>
                             <constraint firstItem="7bQ-c6-3BQ" firstAttribute="top" secondItem="Ua0-r0-iiC" secondAttribute="top" constant="50" id="JOH-bi-jZl"/>
+                            <constraint firstItem="gdO-aS-988" firstAttribute="centerX" secondItem="4Jm-DT-0wV" secondAttribute="centerX" id="M4J-JX-I23"/>
                             <constraint firstItem="RwJ-Mq-yt0" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" constant="8" id="Me1-Fm-ASB"/>
                             <constraint firstItem="Y4O-od-g96" firstAttribute="height" secondItem="lf5-wN-X8r" secondAttribute="height" constant="-10" id="Mzc-Oi-ixM"/>
                             <constraint firstItem="Fmo-f3-F7u" firstAttribute="leading" secondItem="CO8-7c-3hJ" secondAttribute="trailing" constant="-80" id="OD7-xz-IEg"/>
+                            <constraint firstItem="4Jm-DT-0wV" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" id="OVE-u7-T5R"/>
                             <constraint firstItem="V1M-WH-A6M" firstAttribute="height" secondItem="5cl-hU-8vD" secondAttribute="height" id="P1r-Zx-Fkd"/>
                             <constraint firstItem="Y4O-od-g96" firstAttribute="width" secondItem="lf5-wN-X8r" secondAttribute="width" constant="-10" id="PG5-XQ-1Ke"/>
                             <constraint firstItem="zRh-oi-8lC" firstAttribute="top" secondItem="VtH-Ml-h3s" secondAttribute="bottom" constant="4" id="PaH-JN-jmh"/>
                             <constraint firstItem="YQq-gR-zQJ" firstAttribute="centerY" secondItem="RwJ-Mq-yt0" secondAttribute="centerY" id="QN6-jE-vAG"/>
                             <constraint firstItem="CO8-7c-3hJ" firstAttribute="leading" secondItem="YQq-gR-zQJ" secondAttribute="trailing" constant="-70" id="Qsr-yd-ewK"/>
+                            <constraint firstItem="gdO-aS-988" firstAttribute="height" secondItem="4Jm-DT-0wV" secondAttribute="height" id="Qus-0n-bJF"/>
                             <constraint firstItem="JHR-Sb-6kA" firstAttribute="leading" secondItem="sbT-zb-yKn" secondAttribute="leadingMargin" constant="8" id="SRK-Ud-qqh"/>
                             <constraint firstItem="Q3x-GL-Eow" firstAttribute="top" secondItem="5cl-hU-8vD" secondAttribute="bottom" constant="20" id="Tsi-v3-BIb"/>
                             <constraint firstItem="Y4O-od-g96" firstAttribute="centerY" secondItem="lf5-wN-X8r" secondAttribute="centerY" id="U0P-hF-1Km"/>
@@ -573,6 +587,7 @@
                             <constraint firstItem="fP3-kj-r1E" firstAttribute="top" secondItem="uP4-a0-a6h" secondAttribute="bottom" constant="15" id="psR-rU-Fdx"/>
                             <constraint firstItem="zRh-oi-8lC" firstAttribute="centerX" secondItem="J1F-oK-Psg" secondAttribute="centerX" id="qSy-Wl-0zQ"/>
                             <constraint firstItem="BZm-sT-4KZ" firstAttribute="leading" secondItem="YQq-gR-zQJ" secondAttribute="trailing" constant="-20" id="qWd-FU-cCa"/>
+                            <constraint firstItem="gdO-aS-988" firstAttribute="width" secondItem="4Jm-DT-0wV" secondAttribute="width" id="qkb-dj-aVY"/>
                             <constraint firstItem="n8p-E4-VPd" firstAttribute="trailing" secondItem="RwJ-Mq-yt0" secondAttribute="trailing" id="t4P-K7-3uv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RwJ-Mq-yt0" secondAttribute="trailing" constant="8" id="uOq-jk-qne"/>
                             <constraint firstItem="Ua0-r0-iiC" firstAttribute="top" secondItem="RwJ-Mq-yt0" secondAttribute="top" constant="10" id="vfw-IW-omF"/>
@@ -581,6 +596,7 @@
                             <constraint firstItem="Ua0-r0-iiC" firstAttribute="leading" secondItem="RwJ-Mq-yt0" secondAttribute="leading" constant="10" id="xdD-aD-ulY"/>
                             <constraint firstItem="l18-JW-yqU" firstAttribute="top" secondItem="RwJ-Mq-yt0" secondAttribute="top" constant="118" id="xhe-Er-B7F"/>
                             <constraint firstItem="Y4O-od-g96" firstAttribute="centerX" secondItem="lf5-wN-X8r" secondAttribute="centerX" id="xiN-XW-ZpI"/>
+                            <constraint firstItem="gdO-aS-988" firstAttribute="centerY" secondItem="4Jm-DT-0wV" secondAttribute="centerY" id="ztN-0h-iZD"/>
                         </constraints>
                     </view>
                     <connections>
@@ -624,17 +640,42 @@
                                     <constraint firstAttribute="height" constant="105" id="jso-b2-jaF"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bidding and scoring guides will be released on the 20th of February. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijy-Fs-x3K">
+                                <rect key="frame" x="132.5" y="368" width="759" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" red="0.43137254901960786" green="0.27450980392156865" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBtn" translatesAutoresizingMaskIntoConstraints="NO" id="GqQ-cT-FzU">
+                                <rect key="frame" x="20" y="20" width="108" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GqQ-cT-FzU" secondAttribute="height" multiplier="108:29" id="8Xd-ho-yiy"/>
+                                    <constraint firstAttribute="height" constant="29" id="KEm-lj-CcR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx1-lA-FHF">
+                                <rect key="frame" x="20" y="20" width="108" height="29"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.53725490200000003" green="0.71372549019999998" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="kUI-AR-bQh" firstAttribute="top" secondItem="RHZ-m5-EZi" secondAttribute="bottom" constant="105" id="1QS-OZ-6jr"/>
+                            <constraint firstItem="dx1-lA-FHF" firstAttribute="height" secondItem="GqQ-cT-FzU" secondAttribute="height" id="5cU-gE-qPl"/>
+                            <constraint firstItem="dx1-lA-FHF" firstAttribute="centerY" secondItem="GqQ-cT-FzU" secondAttribute="centerY" id="G3k-Xn-agN"/>
+                            <constraint firstItem="dx1-lA-FHF" firstAttribute="width" secondItem="GqQ-cT-FzU" secondAttribute="width" id="GtP-fH-4g9"/>
+                            <constraint firstItem="ijy-Fs-x3K" firstAttribute="centerY" secondItem="rqT-6s-Lgv" secondAttribute="centerY" id="YdN-1w-JRD"/>
+                            <constraint firstItem="GqQ-cT-FzU" firstAttribute="top" secondItem="RHZ-m5-EZi" secondAttribute="bottom" id="ZMe-bF-EfJ"/>
+                            <constraint firstItem="ijy-Fs-x3K" firstAttribute="centerX" secondItem="rqT-6s-Lgv" secondAttribute="centerX" id="iH9-Hs-Rz5"/>
                             <constraint firstItem="kUI-AR-bQh" firstAttribute="centerX" secondItem="rqT-6s-Lgv" secondAttribute="centerX" id="r3K-BV-hKe"/>
+                            <constraint firstItem="GqQ-cT-FzU" firstAttribute="leading" secondItem="rqT-6s-Lgv" secondAttribute="leadingMargin" id="vF3-Dx-BDh"/>
+                            <constraint firstItem="dx1-lA-FHF" firstAttribute="centerX" secondItem="GqQ-cT-FzU" secondAttribute="centerX" id="vGY-Y2-0qF"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sda-CH-0LV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381" y="827"/>
+            <point key="canvasLocation" x="1380.46875" y="826.5625"/>
         </scene>
     </scenes>
     <resources>
@@ -643,6 +684,7 @@
         <image name="Button2" width="638" height="94"/>
         <image name="Button3" width="638" height="94"/>
         <image name="ComingSoon" width="536" height="112"/>
+        <image name="MenuBtn" width="148" height="38"/>
         <image name="NA" width="650" height="650"/>
         <image name="Next" width="55" height="21"/>
         <image name="Prev" width="50" height="21"/>
