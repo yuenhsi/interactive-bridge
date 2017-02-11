@@ -82,6 +82,20 @@ class PlayingVC: UIViewController {
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapOccurred)))
         currentRule = 1
+        let (var1, var2) = swapWithoutTemp(var1: 312.43, var2: 12345)
+        print("var1: \(var1), var2: \(var2)")
+    }
+    
+    func swapWithoutTemp(var1: Any, var2: Any) -> (var1: Any, var2: Any) {
+        var first = var1 as? Double
+        var second = var2 as? Double
+        
+        if first != nil && second != nil {
+            first = first! + second!
+            second = first! - second!
+            first = first! - second!
+        }
+        return (first ?? var1, second ?? var2)
     }
     
     
